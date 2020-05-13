@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1589329204 source:c:\users\elg\desktop\sexta unidad\enemies\simbologia de heroes\main.cpp
+	<iostream>
+	<windows.h>
+	<stdio.h>
+
