@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1589509384 source:d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\enemigo.cpp
+	"Enemigo.h"
+	<iostream>
+	<cstring>
+	<string>
+	<string.h>
+	<strings.h>
+
+1589509384 d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\enemigo.h
+
+1589548482 source:d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\heroe.cpp
+	"Heroe.h"
+	<iostream>
+	<cstring>
+	<string>
+	<string.h>
+	<strings.h>
+
+1589548482 d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\heroe.h
+
+1589556342 source:d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\main.cpp
+	<iostream>
+	<windows.h>
+	<stdio.h>
+	"Enemigo.h"
+	"Heroe.h"
+	"Ataque.h"
+
+1589554635 source:d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\ataque.cpp
+	"Ataque.h"
+	"Heroe.h"
+	"Enemigo.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
+1589551673 d:\david\uabcs\trabajos jonathan\semestre 2\unidad 6\combateprueba\ataque.h
+	"Heroe.h"
+	"Enemigo.h"
+
