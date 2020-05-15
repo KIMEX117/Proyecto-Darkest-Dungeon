@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1587951528 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
+	<iostream>
+	<windows.h>
+	<stdio.h>
+
