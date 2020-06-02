@@ -1,6 +1,11 @@
 # depslib dependency file v1.0
-1587951528 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
+1591065257 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
 	<iostream>
 	<windows.h>
 	<stdio.h>
+	<conio.h>
+	<mmsystem.h>
+	<cstdlib>
+	<stdlib.h>
+	<time.h>
 
