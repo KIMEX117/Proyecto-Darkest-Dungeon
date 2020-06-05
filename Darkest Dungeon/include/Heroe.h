@@ -13,16 +13,9 @@ class Heroe
         int dodge;
         int protection;
         int position;
-        int chanceBleed;
-        int chancePoison;
-        int chanceStun;
-        int chanceDie;
-        int bleed;
-        int poison;
-        int stun;
     public:
         /*Constructores*/
-        Heroe(char[],int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
+        Heroe(char[],int,int,int,int,int,int,int,int);
         Heroe();
         /*Metodos Set*/
         void setName(char[]);
@@ -34,13 +27,6 @@ class Heroe
         void setDodge(int);
         void setProtection(int);
         void setPosition(int);
-        void setChanceBleed(int);
-        void setChancePoison(int);
-        void setChanceStun(int);
-        void setChanceDie(int);
-        void setBleed(int);
-        void setPoison(int);
-        void setStun(int);
         /*Funciones Get*/
         char * getName();
         int getMaxHealth();
@@ -51,13 +37,5 @@ class Heroe
         int getDodge();
         int getProtection();
         int getPosition();
-        int getChanceBleed();
-        int getChancePoison();
-        int getChanceStun();
-        int getChanceDie();
-        int getBleed();
-        int getPoison();
-        int getStun();
 };
-
 #endif // HEROE_H

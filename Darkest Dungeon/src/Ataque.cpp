@@ -22,23 +22,18 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
     int dodge;
     int prot;
     int pos;
-    int cbleed;
-    int cpoison;
-    int cstun;
-    int cdie;
-    int bleed;
-    int poison;
-    int stun;
     /*Variables de cambio-*/
     if(heroes[turno].getPosition()==0 && realizado==0){
         do{
-            cout << "Ingresa la posicion a cambiar" << endl;
-            cout << "Espacios disponibles:" << endl;
+            limpiarHabilidades();
+            gotoxyAtaque(41,22);cout<<"CAMBIO DE POSICION         (Ingresar # de posicion)"<<endl;
+            gotoxyAtaque(41,23);cout << "Espacios disponibles:" << endl;
             for(int i=heroes[turno].getPosition();i<=(heroes[turno].getPosition()+1);i++){
-                if(i!=heroes[turno].getPosition()&&heroes[i].getHealth()>0){
-                    cout << "Posicion " << i << endl;
+                if(i!=heroes[turno].getPosition()){
+                    gotoxyAtaque(41,24+i);cout << "Posicion " << i << endl;
                 }
             }
+            gotoxyAtaque(70,24);cout << "Posicion: ";
             cin >> space;
         }while(space==heroes[turno].getPosition()||space>1||space<0);
         heroes[space].setPosition(heroes[turno].getPosition());
@@ -52,13 +47,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         dodge = heroes[space].getDodge();
         prot = heroes[space].getProtection();
         pos = heroes[space].getPosition();
-        cbleed = heroes[space].getChanceBleed();
-        cpoison = heroes[space].getChancePoison();
-        cstun = heroes[space].getChanceStun();
-        cdie = heroes[space].getChanceDie();
-        bleed = heroes[space].getBleed();
-        poison = heroes[space].getPoison();
-        stun = heroes[space].getStun();
         //Cambiar los datos del heroe a la posicion deseada
         heroes[space].setMaxHealth(heroes[turno].getMaxHealth());
         heroes[space].setHealth(heroes[turno].getHealth());
@@ -68,13 +56,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[space].setDodge(heroes[turno].getDodge());
         heroes[space].setProtection(heroes[turno].getProtection());
         heroes[space].setPosition(heroes[turno].getPosition());
-        heroes[space].setChanceBleed(heroes[turno].getChanceBleed());
-        heroes[space].setChancePoison(heroes[turno].getChancePoison());
-        heroes[space].setChanceStun(heroes[turno].getChanceStun());
-        heroes[space].setChanceDie(heroes[turno].getChanceDie());
-        heroes[space].setBleed(heroes[turno].getBleed());
-        heroes[space].setPoison(heroes[turno].getPoison());
-        heroes[space].setStun(heroes[turno].getStun());
         //Cambiar los datos del heroe que fue reemplazado a la posicion del que realizo el cambio
         heroes[turno].setMaxHealth(hpMax);
         heroes[turno].setHealth(hp);
@@ -84,24 +65,19 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[turno].setDodge(dodge);
         heroes[turno].setProtection(prot);
         heroes[turno].setPosition(pos);
-        heroes[turno].setChanceBleed(cbleed);
-        heroes[turno].setChancePoison(cpoison);
-        heroes[turno].setChanceStun(cstun);
-        heroes[turno].setChanceDie(cdie);
-        heroes[turno].setBleed(bleed);
-        heroes[turno].setPoison(poison);
-        heroes[turno].setStun(stun);
         realizado = 1;
     }
     if(heroes[turno].getPosition()>0&&heroes[turno].getPosition()<3&&realizado==0){
         do{
-            cout << "Ingresa la posicion a cambiar" << endl;
-            cout << "Espacios disponibles:" << endl;
+            limpiarHabilidades();
+            gotoxyAtaque(41,22);cout<<"CAMBIO DE POSICION         (Ingresar # de posicion)"<<endl;
+            gotoxyAtaque(41,23);cout << "Espacios disponibles:" << endl;
             for(int i=heroes[turno].getPosition()-1;i<=(heroes[turno].getPosition()+1);i++){
                 if(i!=heroes[turno].getPosition()){
-                    cout << "Posicion " << i << endl;
+                    gotoxyAtaque(41,24+i);cout << "Posicion " << i << endl;
                 }
             }
+            gotoxyAtaque(70,24);cout << "Posicion: ";
             cin >> space;
         }while(space==heroes[turno].getPosition()||space>3||space>heroes[turno].getPosition()+1||space<heroes[turno].getPosition()-1);
         heroes[space].setPosition(heroes[turno].getPosition());
@@ -115,13 +91,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         dodge = heroes[space].getDodge();
         prot = heroes[space].getProtection();
         pos = heroes[space].getPosition();
-        cbleed = heroes[space].getChanceBleed();
-        cpoison = heroes[space].getChancePoison();
-        cstun = heroes[space].getChanceStun();
-        cdie = heroes[space].getChanceDie();
-        bleed = heroes[space].getBleed();
-        poison = heroes[space].getPoison();
-        stun = heroes[space].getStun();
         //Cambiar los datos del heroe a la posicion deseada
         heroes[space].setMaxHealth(heroes[turno].getMaxHealth());
         heroes[space].setHealth(heroes[turno].getHealth());
@@ -131,13 +100,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[space].setDodge(heroes[turno].getDodge());
         heroes[space].setProtection(heroes[turno].getProtection());
         heroes[space].setPosition(heroes[turno].getPosition());
-        heroes[space].setChanceBleed(heroes[turno].getChanceBleed());
-        heroes[space].setChancePoison(heroes[turno].getChancePoison());
-        heroes[space].setChanceStun(heroes[turno].getChanceStun());
-        heroes[space].setChanceDie(heroes[turno].getChanceDie());
-        heroes[space].setBleed(heroes[turno].getBleed());
-        heroes[space].setPoison(heroes[turno].getPoison());
-        heroes[space].setStun(heroes[turno].getStun());
         //Cambiar los datos del heroe que fue reemplazado a la posicion del que realizo el cambio
         heroes[turno].setMaxHealth(hpMax);
         heroes[turno].setHealth(hp);
@@ -147,24 +109,19 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[turno].setDodge(dodge);
         heroes[turno].setProtection(prot);
         heroes[turno].setPosition(pos);
-        heroes[turno].setChanceBleed(cbleed);
-        heroes[turno].setChancePoison(cpoison);
-        heroes[turno].setChanceStun(cstun);
-        heroes[turno].setChanceDie(cdie);
-        heroes[turno].setBleed(bleed);
-        heroes[turno].setPoison(poison);
-        heroes[turno].setStun(stun);
         realizado = 1;
     }
     if(heroes[turno].getPosition()==3&&realizado==0){
         do{
-            cout << "Ingresa la posicion a cambiar" << endl;
-            cout << "Espacios disponibles:" << endl;
+            limpiarHabilidades();
+            gotoxyAtaque(41,22);cout<<"CAMBIO DE POSICION         (Ingresar # de posicion)"<<endl;
+            gotoxyAtaque(41,23);cout << "Espacios disponibles:" << endl;
             for(int i=(heroes[turno].getPosition()-1);i<=heroes[turno].getPosition();i++){
                 if(i!=heroes[turno].getPosition()){
-                    cout << "Posicion " << i << endl;
+                    gotoxyAtaque(41,24+i);cout << "Posicion " << i << endl;
                 }
             }
+            gotoxyAtaque(70,24);cout << "Posicion: ";
             cin >> space;
         }while(space==heroes[turno].getPosition()||space>3||space<heroes[turno].getPosition()-1);
         heroes[space].setPosition(heroes[turno].getPosition());
@@ -178,13 +135,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         dodge = heroes[space].getDodge();
         prot = heroes[space].getProtection();
         pos = heroes[space].getPosition();
-        cbleed = heroes[space].getChanceBleed();
-        cpoison = heroes[space].getChancePoison();
-        cstun = heroes[space].getChanceStun();
-        cdie = heroes[space].getChanceDie();
-        bleed = heroes[space].getBleed();
-        poison = heroes[space].getPoison();
-        stun = heroes[space].getStun();
         //Cambiar los datos del heroe a la posicion deseada
         heroes[space].setMaxHealth(heroes[turno].getMaxHealth());
         heroes[space].setHealth(heroes[turno].getHealth());
@@ -194,13 +144,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[space].setDodge(heroes[turno].getDodge());
         heroes[space].setProtection(heroes[turno].getProtection());
         heroes[space].setPosition(heroes[turno].getPosition());
-        heroes[space].setChanceBleed(heroes[turno].getChanceBleed());
-        heroes[space].setChancePoison(heroes[turno].getChancePoison());
-        heroes[space].setChanceStun(heroes[turno].getChanceStun());
-        heroes[space].setChanceDie(heroes[turno].getChanceDie());
-        heroes[space].setBleed(heroes[turno].getBleed());
-        heroes[space].setPoison(heroes[turno].getPoison());
-        heroes[space].setStun(heroes[turno].getStun());
         //Cambiar los datos del heroe que fue reemplazado a la posicion del que realizo el cambio
         heroes[turno].setMaxHealth(hpMax);
         heroes[turno].setHealth(hp);
@@ -210,19 +153,9 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[turno].setDodge(dodge);
         heroes[turno].setProtection(prot);
         heroes[turno].setPosition(pos);
-        heroes[turno].setChanceBleed(cbleed);
-        heroes[turno].setChancePoison(cpoison);
-        heroes[turno].setChanceStun(cstun);
-        heroes[turno].setChanceDie(cdie);
-        heroes[turno].setBleed(bleed);
-        heroes[turno].setPoison(poison);
-        heroes[turno].setStun(stun);
         realizado = 1;
     }
-    cout << "Posicion actual del heroe: " << heroes[1].getPosition() << endl;
-}
-void Ataque::SharedHeroDeath(int turno, Heroe heroes[4]){
-    //Recorrer de posicion a los heroes una vez muera alguno
+    //cout << "Posicion actual del heroe: " << heroes[1].getPosition() << endl;
 }
 //FUNCION GOTOXY PARA PODER USARLA DENTRO DE LA CLASE
 void Ataque::gotoxyAtaque(int x, int y){
@@ -253,6 +186,8 @@ void Ataque::CrusaderSkill_Smite(int turno, Heroe heroes[4], Enemigo enemigos[4]
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -275,20 +210,22 @@ void Ataque::CrusaderSkill_Smite(int turno, Heroe heroes[4], Enemigo enemigos[4]
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(3);
-            heroes[turno].setAccuracy(85);
+            heroes[turno].setCritic(9);
+            heroes[turno].setAccuracy(87);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
                 }
@@ -306,12 +243,13 @@ void Ataque::CrusaderSkill_Smite(int turno, Heroe heroes[4], Enemigo enemigos[4]
 void Ataque::CrusaderSkill_StunningBlow(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitstun;
     int target;
-    float skillDamage = 0.5;
+    float skillDamage = 0.8;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -334,27 +272,24 @@ void Ataque::CrusaderSkill_StunningBlow(int turno, Heroe heroes[4], Enemigo enem
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(3);
-            heroes[turno].setAccuracy(90);
+            heroes[turno].setCritic(37);
+            heroes[turno].setAccuracy(70);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
-                    /*hitstun = rand()%100;
-                    if(hitstun<enemigos[target].getChanceStun()){
-                        enemigos[target].setStun(1);
-                        cout << "El enemigo ha sido aturdido" << endl;
-                    }*/
                 }
             }else{
                 gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
@@ -371,10 +306,12 @@ void Ataque::CrusaderSkill_ZealousAccusation(int turno, Heroe heroes[4], Enemigo
     int hitcritical;
     int random;
     int target;
-    float skillDamage = 0.6;
+    float skillDamage = 0.65;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -392,21 +329,23 @@ void Ataque::CrusaderSkill_ZealousAccusation(int turno, Heroe heroes[4], Enemigo
                 if(enemigos[i].getHealth()>0){
                     if(hit<(heroes[turno].getAccuracy()-enemigos[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-enemigos[i].getProtection())*0.01);
+                        damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<heroes[turno].getCritic()){
-                            enemigos[i].setHealth(enemigos[i].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
-                            gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
+                            gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            enemigos[i].setHealth(enemigos[i].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(enemigos[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "Un objetivo ha sido derribado" << endl;
                         }else{
-                            gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << i << ": " << enemigos[i].getHealth() << endl;
+                            gotoxyAtaque(41,26+1);cout << "Vida del enemigo impactado " << i << ": " << enemigos[i].getHealth() << endl;
                         }
                     }else{
-                        gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
+                        gotoxyAtaque(41,26);cout << "Fallaste el ataque" << endl;
                     }
                 }
             }
@@ -449,8 +388,8 @@ void Ataque::CrusaderSkill_BattleHeal(int turno, Heroe heroes[4], Enemigo enemig
             hitcritical = rand()%100;
             if(hitcritical<heroes[turno].getCritic()){
                 heroes[target].setHealth(heroes[target].getHealth()+(curacion*1.5));
-                gotoxyAtaque(41,24);cout << "El heroe ha sido sanado perfectamente!" << endl;
-                gotoxyAtaque(41,25);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
+                gotoxyAtaque(41,23);cout << "El heroe ha sido sanado perfectamente!" << endl;
+                gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
             }else{
                 heroes[target].setHealth(heroes[target].getHealth()+curacion);
                 gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << curacion << endl;
@@ -475,6 +414,8 @@ void Ataque::HighwaymanSkill_Slice(int turno, Heroe heroes[4], Enemigo enemigos[
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -498,19 +439,21 @@ void Ataque::HighwaymanSkill_Slice(int turno, Heroe heroes[4], Enemigo enemigos[
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
             heroes[turno].setCritic(10);
-            heroes[turno].setAccuracy(85);
+            heroes[turno].setAccuracy(87);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
                 }
@@ -524,16 +467,16 @@ void Ataque::HighwaymanSkill_Slice(int turno, Heroe heroes[4], Enemigo enemigos[
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige sangrado
 void Ataque::HighwaymanSkill_OpenVein(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitbleed;
     int target;
     float skillDamage = 0.85;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -556,28 +499,25 @@ void Ataque::HighwaymanSkill_OpenVein(int turno, Heroe heroes[4], Enemigo enemig
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(5);
-            heroes[turno].setAccuracy(95);
+            heroes[turno].setCritic(36);
+            heroes[turno].setAccuracy(70);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
 
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
-                    /*hitbleed = rand()%100;
-                    if(hitbleed<enemigos[target].getChanceBleed()){
-                        enemigos[target].setBleed(3);
-                        cout << "El enemigo ha sido herido con un sangrado nivel " << enemigos[target].getBleed() << endl;
-                    }*/
                 }
             }else{
                 gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
@@ -593,10 +533,12 @@ void Ataque::HighwaymanSkill_PistolShot(int turno, Heroe heroes[4], Enemigo enem
     int hit;
     int hitcritical;
     int target;
-    float skillDamage = 0.85;
+    float skillDamage = 0.9;
     int rangeMin = 1;
     int rangeMax = 3;
     int objetivos = 3;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -619,21 +561,23 @@ void Ataque::HighwaymanSkill_PistolShot(int turno, Heroe heroes[4], Enemigo enem
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(13);
+            heroes[turno].setCritic(17);
             heroes[turno].setAccuracy(85);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
 
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,26);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
                 }
@@ -652,10 +596,12 @@ void Ataque::HighwaymanSkill_Grapeshot(int turno, Heroe heroes[4], Enemigo enemi
     int hitcritical;
     int random;
     int target;
-    float skillDamage = 0.5;
+    float skillDamage = 0.55;
     int rangeMin = 0;
     int rangeMax = 2;
     int objetivos = 3;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -673,21 +619,23 @@ void Ataque::HighwaymanSkill_Grapeshot(int turno, Heroe heroes[4], Enemigo enemi
                 if(enemigos[i].getHealth()>0){
                     if(hit<(heroes[turno].getAccuracy()-enemigos[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-enemigos[i].getProtection())*0.01);
+                        damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<heroes[turno].getCritic()){
-                            enemigos[i].setHealth(enemigos[i].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
-                            gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
+                            gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            enemigos[i].setHealth(enemigos[i].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(enemigos[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "Un objetivo ha sido derribado" << endl;
                         }/*else{
                             gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << i << ": " << enemigos[i].getHealth() << endl;
                         }*/
                     }else{
-                        gotoxyAtaque(41,24);gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
+                        gotoxyAtaque(41,26);gotoxyAtaque(41,24);cout << "Fallaste un ataque" << endl;
                     }
                 }
             }
@@ -708,10 +656,12 @@ void Ataque::VestalSkill_Judgement(int turno, Heroe heroes[4], Enemigo enemigos[
     int hit;
     int hitcritical;
     int target;
-    float skillDamage = 0.75;
+    float skillDamage = 0.9;
     int rangeMin = 0;
     int rangeMax = 3;
     int objetivos = 4;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -735,19 +685,21 @@ void Ataque::VestalSkill_Judgement(int turno, Heroe heroes[4], Enemigo enemigos[
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
             heroes[turno].setCritic(5);
-            heroes[turno].setAccuracy(85);
+            heroes[turno].setAccuracy(87);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
                 }
@@ -761,16 +713,16 @@ void Ataque::VestalSkill_Judgement(int turno, Heroe heroes[4], Enemigo enemigos[
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige aturdimiento
 void Ataque::VestalSkill_DazzlingLight(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitstun;
     int target;
-    float skillDamage = 0.25;
+    float skillDamage = 0.85;
     int rangeMin = 0;
     int rangeMax = 2;
     int objetivos = 3;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -793,27 +745,24 @@ void Ataque::VestalSkill_DazzlingLight(int turno, Heroe heroes[4], Enemigo enemi
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(6);
-            heroes[turno].setAccuracy(90);
+            heroes[turno].setCritic(36);
+            heroes[turno].setAccuracy(70);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
-                    gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
+                    gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
-                    /*hitstun = rand()%100;
-                    if(hitstun<enemigos[target].getChanceStun()){
-                        enemigos[target].setStun(1);
-                        cout << "El enemigo ha sido aturdido" << endl;
-                    }*/
                 }
             }else{
                 gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
@@ -825,7 +774,6 @@ void Ataque::VestalSkill_DazzlingLight(int turno, Heroe heroes[4], Enemigo enemi
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Quitara sangrado, veneno y paralisis
 void Ataque::VestalSkill_DivineGrace(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hitcritical;
     int target;
@@ -858,20 +806,16 @@ void Ataque::VestalSkill_DivineGrace(int turno, Heroe heroes[4], Enemigo enemigo
             hitcritical = rand()%100;
             if(hitcritical<heroes[turno].getCritic()){
                 heroes[target].setHealth(heroes[target].getHealth()+(curacion*1.5));
-                gotoxyAtaque(41,24);cout << "El heroe ha sido sanado perfectamente!" << endl;
-                gotoxyAtaque(41,25);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
+                gotoxyAtaque(41,23);cout << "El heroe ha sido sanado perfectamente!" << endl;
+                gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
             }else{
                 heroes[target].setHealth(heroes[target].getHealth()+curacion);
                 gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << curacion << endl;
             }
-            /*heroes[target].setBleed(0);
-            heroes[target].setPoison(0);
-            heroes[target].setStun(0);
-            cout << "El heroe ha sido curado de efectos de estado" << endl;*/
             if(heroes[target].getHealth()>heroes[target].getMaxHealth()){
                 heroes[target].setHealth(heroes[target].getMaxHealth());
             }
-            gotoxyAtaque(41,24);cout << "Vida del heroe asistido " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
+            gotoxyAtaque(41,26);cout << "Vida del heroe asistido " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
         }else{
             gotoxyAtaque(41,24);cout << "No es posible desde esta posicion" << endl;
         }
@@ -879,7 +823,6 @@ void Ataque::VestalSkill_DivineGrace(int turno, Heroe heroes[4], Enemigo enemigo
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Quitara paralisis
 void Ataque::VestalSkill_DivineComfort(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
@@ -904,20 +847,17 @@ void Ataque::VestalSkill_DivineComfort(int turno, Heroe heroes[4], Enemigo enemi
                     hitcritical = rand()%100;
                     if(hitcritical<heroes[turno].getCritic()){
                         heroes[i].setHealth(heroes[i].getHealth()+(curacion*1.5));
-                        //cout << "El heroe ha sido sanado perfectamente!" << endl;
                         gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
                     }else{
                         heroes[i].setHealth(heroes[i].getHealth()+curacion);
                         gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << curacion << endl;
                     }
-                    /*heroes[i].setStun(0);*/
                     if(heroes[i].getHealth()>heroes[i].getMaxHealth()){
                         heroes[i].setHealth(heroes[i].getMaxHealth());
                     }
                     gotoxyAtaque(41,25+i);cout << "Vida del heroe asistido " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
                 }
             }
-            /*cout << "Los heroes han sido curados del efecto de paralisis" << endl;*/
         }else{
             gotoxyAtaque(41,24);cout << "No es posible atacar desde esta posicion" << endl;
         }
@@ -927,16 +867,16 @@ void Ataque::VestalSkill_DivineComfort(int turno, Heroe heroes[4], Enemigo enemi
 
 }
 /*Habilidades de doctor*/
-//Inflige veneno
 void Ataque::PlagueDoctorSkill_NoxiousBlast(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitpoison;
     int target;
-    float skillDamage = 0.25;
+    float skillDamage = 1.25;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -959,27 +899,24 @@ void Ataque::PlagueDoctorSkill_NoxiousBlast(int turno, Heroe heroes[4], Enemigo 
             gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
             }while((target<rangeMin||target>rangeMax)||enemigos[target].getHealth()<=0);
             hit = rand()%100;
-            heroes[turno].setCritic(7);
+            heroes[turno].setCritic(9);
             heroes[turno].setAccuracy(95);
             if(hit<(heroes[turno].getAccuracy()-enemigos[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-enemigos[target].getProtection())*0.01);
+                damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<heroes[turno].getCritic()){
-                    enemigos[target].setHealth(enemigos[target].getHealth()-((((heroes[turno].getDamage()*skillDamage)*1.5))));
+                    enemigos[target].setHealth(enemigos[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    enemigos[target].setHealth(enemigos[target].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                    enemigos[target].setHealth(enemigos[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(enemigos[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
-                    /*hitpoison = rand()%100;
-                    if(hitpoison<enemigos[target].getChancePoison()){
-                        enemigos[target].setPoison(5);
-                        cout << "El enemigo ha sido herido con un envenenamiento nivel " << enemigos[target].getPoison() << endl;
-                    }*/
                 }
             }else{
                 gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
@@ -991,17 +928,17 @@ void Ataque::PlagueDoctorSkill_NoxiousBlast(int turno, Heroe heroes[4], Enemigo 
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige veneno
 void Ataque::PlagueDoctorSkill_PlagueGrenade(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitpoison;
     int random;
     int target;
-    float skillDamage = 0.15;
+    float skillDamage = 0.85;
     int rangeMin = 2;
     int rangeMax = 3;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -1012,41 +949,33 @@ void Ataque::PlagueDoctorSkill_PlagueGrenade(int turno, Heroe heroes[4], Enemigo
         limpiarHabilidades();
         gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
         if(heroes[turno].getPosition()>1){
-            heroes[turno].setCritic(2);
+            heroes[turno].setCritic(7);
             heroes[turno].setAccuracy(95);
             for(int i=rangeMin;i<=rangeMax;i++){
                 hit = rand()%100;
                 if(enemigos[i].getHealth()>0){
                     if(hit<(heroes[turno].getAccuracy()-enemigos[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-enemigos[i].getProtection())*0.01);
+                        damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<heroes[turno].getCritic()){
-                            enemigos[i].setHealth(enemigos[i].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
+                            enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            enemigos[i].setHealth(enemigos[i].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(enemigos[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "Un objetivo ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,25+i);cout << "Vida del enemigo impactado " << i << ": " << enemigos[i].getHealth() << endl;
-                            /*hitpoison = rand()%100;
-                            if(hitpoison<enemigos[i].getChancePoison()){
-                                enemigos[i].setPoison(5);
-                                cout << "El enemigo ha sido herido con un envenenamiento nivel " << enemigos[i].getPoison() << endl;
-                            }*/
                         }
                     }else{
-                        gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
+                        gotoxyAtaque(41,26);cout << "Fallaste un ataque" << endl;
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del enemigo " << i << ": " << enemigos[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "No es posible atacar desde esta posicion" << endl;
         }
@@ -1054,17 +983,17 @@ void Ataque::PlagueDoctorSkill_PlagueGrenade(int turno, Heroe heroes[4], Enemigo
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige aturdimiento
 void Ataque::PlagueDoctorSkill_BlindingGas(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitstun;
     int random;
     int target;
-    float skillDamage = 0.05;
-    int rangeMin = 2;
+    float skillDamage = 0.55;
+    int rangeMin = 0;
     int rangeMax = 3;
-    int objetivos = 2;
+    int objetivos = 4;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(enemigos[i].getHealth()<=0){
@@ -1075,41 +1004,33 @@ void Ataque::PlagueDoctorSkill_BlindingGas(int turno, Heroe heroes[4], Enemigo e
         limpiarHabilidades();
         gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
         if(heroes[turno].getPosition()>1){
-            heroes[turno].setCritic(2);
+            heroes[turno].setCritic(4);
             heroes[turno].setAccuracy(95);
             for(int i=rangeMin;i<=rangeMax;i++){
                 hit = rand()%100;
                 if(enemigos[i].getHealth()>0){
                     if(hit<(heroes[turno].getAccuracy()-enemigos[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-enemigos[i].getProtection())*0.01);
+                        damageReceive = (heroes[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<heroes[turno].getCritic()){
-                            enemigos[i].setHealth(enemigos[i].getHealth()-((heroes[turno].getDamage()*skillDamage)*1.5));
+                            enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << ((heroes[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            enemigos[i].setHealth(enemigos[i].getHealth()-(heroes[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (heroes[turno].getDamage()*skillDamage) << endl;
+                            enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(enemigos[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El objetivo ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "Un objetivo ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,25+i);cout << "Vida del enemigo impactado " << i << ": " << enemigos[i].getHealth() << endl;
-                            /*hitstun = rand()%100;
-                            if(hitstun<enemigos[i].getChanceStun()){
-                                enemigos[i].setStun(1);
-                                cout << "El enemigo ha sido aturdido" << endl;
-                            }*/
                         }
                     }else{
-                        gotoxyAtaque(41,24);cout << "Fallaste el ataque" << endl;
+                        gotoxyAtaque(41,25);cout << "Fallaste un ataque" << endl;
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del enemigo " << i << ": " << enemigos[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "No es posible atacar desde esta posicion" << endl;
         }
@@ -1117,14 +1038,13 @@ void Ataque::PlagueDoctorSkill_BlindingGas(int turno, Heroe heroes[4], Enemigo e
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Quitara sangrado, veneno y paralisis
 void Ataque::PlagueDoctorSkill_BattlefieldMedicine(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hitcritical;
     int target;
     int rangeMin = 0;
     int rangeMax = 3;
     int objetivos = 4;
-    int curacion = 2;
+    int curacion = 5;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0&&heroes[i].getHealth()==heroes[i].getMaxHealth()){
@@ -1150,25 +1070,16 @@ void Ataque::PlagueDoctorSkill_BattlefieldMedicine(int turno, Heroe heroes[4], E
             hitcritical = rand()%100;
             if(hitcritical<heroes[turno].getCritic()){
                 heroes[target].setHealth(heroes[target].getHealth()+(curacion*1.5));
-                gotoxyAtaque(41,24);cout << "El heroe ha sido sanado perfectamente!" << endl;
+                gotoxyAtaque(41,23);cout << "El heroe ha sido sanado perfectamente!" << endl;
                 gotoxyAtaque(41,25);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
             }else{
                 heroes[target].setHealth(heroes[target].getHealth()+curacion);
                 gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << curacion << endl;
             }
-            /*heroes[target].setBleed(0);
-            heroes[target].setPoison(0);
-            heroes[target].setStun(0);
-            cout << "El heroe ha sido curado de efectos de estado" << endl;*/
             if(heroes[target].getHealth()>heroes[target].getMaxHealth()){
                 heroes[target].setHealth(heroes[target].getMaxHealth());
             }
             gotoxyAtaque(41,26);cout << "Vida del heroe asistido " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
-            /*for(int i=0;i<4;i++){
-                if(heroes[i].getHealth()>0){
-                    cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "No es posible desde esta posicion" << endl;
         }
@@ -1177,16 +1088,16 @@ void Ataque::PlagueDoctorSkill_BattlefieldMedicine(int turno, Heroe heroes[4], E
     }
 }
 /*Habilidades de soldado esqueleto*/
-//Inflige sangrado
 void Ataque::SoldierSkill_GraveyardSlash(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitbleed;
     int target;
     float skillDamage = 1;
     int rangeMin = 0;
     int rangeMax = 2;
     int objetivos = 3;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1205,29 +1116,21 @@ void Ataque::SoldierSkill_GraveyardSlash(int turno, Heroe heroes[4], Enemigo ene
             enemigos[turno].setAccuracy(90);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
-                    /*hitbleed = rand()%100;
-                    if(hitbleed<heroes[target].getChanceBleed()){
-                        heroes[target].setBleed(3);
-                        cout << "El heroe ha sido herido con un sangrado nivel " << heroes[target].getBleed() << endl;
-                    }*/
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        gotoxyAtaque(41,25+i);cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1244,6 +1147,8 @@ void Ataque::SoldierSkill_GraveyardStumble(int turno, Heroe heroes[4], Enemigo e
     int rangeMin = 3;
     int rangeMax = 3;
     int objetivos = 1;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1260,24 +1165,21 @@ void Ataque::SoldierSkill_GraveyardStumble(int turno, Heroe heroes[4], Enemigo e
             enemigos[turno].setAccuracy(50);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth()<< endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth()<< endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1295,6 +1197,8 @@ void Ataque::ArbalistSkill_Quarrel(int turno, Heroe heroes[4], Enemigo enemigos[
     int rangeMin = 1;
     int rangeMax = 3;
     int objetivos = 3;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1313,24 +1217,21 @@ void Ataque::ArbalistSkill_Quarrel(int turno, Heroe heroes[4], Enemigo enemigos[
             enemigos[turno].setAccuracy(83);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1347,6 +1248,8 @@ void Ataque::ArbalistSkill_BayonetJab(int turno, Heroe heroes[4], Enemigo enemig
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1365,24 +1268,21 @@ void Ataque::ArbalistSkill_BayonetJab(int turno, Heroe heroes[4], Enemigo enemig
             enemigos[turno].setAccuracy(73);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1392,16 +1292,16 @@ void Ataque::ArbalistSkill_BayonetJab(int turno, Heroe heroes[4], Enemigo enemig
     }
 }
 /*Habilidades de defensor esqueleto*/
-//Inflige sangrado
 void Ataque::DefenderSkill_AxeBlade(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitbleed;
     int target;
     float skillDamage = 0.8;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1420,29 +1320,21 @@ void Ataque::DefenderSkill_AxeBlade(int turno, Heroe heroes[4], Enemigo enemigos
             enemigos[turno].setAccuracy(73);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
-                    /*hitbleed = rand()%100;
-                    if(hitbleed<heroes[target].getChanceBleed()){
-                        heroes[target].setBleed(3);
-                        cout << "El heroe ha sido herido con un sangrado nivel " << heroes[target].getBleed() << endl;
-                    }*/
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1451,16 +1343,16 @@ void Ataque::DefenderSkill_AxeBlade(int turno, Heroe heroes[4], Enemigo enemigos
         }
     }
 }
-//Inflige aturdimiento
 void Ataque::DefenderSkill_DeadWeight(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitstun;
     int target;
     float skillDamage = 0.6;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1479,29 +1371,21 @@ void Ataque::DefenderSkill_DeadWeight(int turno, Heroe heroes[4], Enemigo enemig
             enemigos[turno].setAccuracy(83);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                        *//*hitstun = rand()%100;
-                        if(hitstun<heroes[target].getChanceStun()){
-                            heroes[target].setStun(1);
-                            cout << "El heroe ha sido aturdido" << endl;
-                        }*/
-                    /*}
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1518,6 +1402,8 @@ void Ataque::DefenderSkill_ClumsyAxeBlade(int turno, Heroe heroes[4], Enemigo en
     int rangeMin = 2;
     int rangeMax = 3;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1536,24 +1422,21 @@ void Ataque::DefenderSkill_ClumsyAxeBlade(int turno, Heroe heroes[4], Enemigo en
             enemigos[turno].setAccuracy(73);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1571,6 +1454,8 @@ void Ataque::CaptainSkill_CrushingBlow(int turno, Heroe heroes[4], Enemigo enemi
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1589,24 +1474,21 @@ void Ataque::CaptainSkill_CrushingBlow(int turno, Heroe heroes[4], Enemigo enemi
             enemigos[turno].setAccuracy(89);
             if(hit<(enemigos[turno].getAccuracy()-heroes[target].getDodge())){
                 hitcritical = rand()%100;
+                protect = ((100-heroes[target].getProtection())*0.01);
+                damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
-                    heroes[target].setHealth(heroes[target].getHealth()-((((enemigos[turno].getDamage()*skillDamage)*1.5))));
+                    heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
                     gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage())*1.5) << endl;
+                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                 }else{
-                    heroes[target].setHealth(heroes[target].getHealth()-(enemigos[turno].getDamage()));
-                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()) << endl;
+                    heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                 }
                 if(heroes[target].getHealth()<=0){
                     gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
-                /*for(int i=0;i<4;i++){
-                    if(heroes[i].getHealth()>0){
-                        cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << " / " << heroes[i].getMaxHealth() << endl;
-                    }
-                }*/
             }else{
                 gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
             }
@@ -1619,10 +1501,12 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
     int hit;
     int hitcritical;
     int random;
-    float skillDamage = 0.8;
+    float skillDamage = 0.7;
     int rangeMin = 0;
     int rangeMax = 3;
     int objetivos = 4;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1640,13 +1524,15 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
                 if(heroes[i].getHealth()>0){
                     if(hit<(enemigos[turno].getAccuracy()-heroes[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-heroes[i].getProtection())*0.01);
+                        damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
-                            heroes[i].setHealth(heroes[i].getHealth()-((enemigos[turno].getDamage()*skillDamage)*1.5));
+                            heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            heroes[i].setHealth(heroes[i].getHealth()-(enemigos[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()*skillDamage) << endl;
+                            heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(heroes[i].getHealth()<=0){
                             gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
@@ -1658,11 +1544,6 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "El enemigo no puede atacar desde esta posicion" << endl;
         }
@@ -1670,18 +1551,17 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Habilidades del jefe crearan 1 soldado
 /*Habilidades de jefe necromancer*/
-//Inflige veneno
 void Ataque::NecromancerSkill_WillingFlesh(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitpoison;
     int random;
-    float skillDamage = 1.2;
+    float skillDamage = 0.95;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1692,41 +1572,33 @@ void Ataque::NecromancerSkill_WillingFlesh(int turno, Heroe heroes[4], Enemigo e
         limpiarHabilidades();
         gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
         if(enemigos[turno].getPosition()>=0&&enemigos[turno].getPosition()<=3){
-            enemigos[turno].setCritic(6);
-            enemigos[turno].setAccuracy(100);
+            enemigos[turno].setCritic(5);
+            enemigos[turno].setAccuracy(92);
             for(int i=rangeMin;i<=rangeMax;i++){
                 hit = rand()%100;
                 if(heroes[i].getHealth()>0){
                     if(hit<(enemigos[turno].getAccuracy()-heroes[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-heroes[i].getProtection())*0.01);
+                        damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
-                            heroes[i].setHealth(heroes[i].getHealth()-((enemigos[turno].getDamage()*skillDamage)*1.5));
+                            heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            heroes[i].setHealth(heroes[i].getHealth()-(enemigos[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()*skillDamage) << endl;
+                            heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(heroes[i].getHealth()<=0){
                             gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
-                            /*hitpoison = rand()%100;
-                            if(hitpoison<heroes[i].getChancePoison()){
-                                heroes[i].setPoison(2);
-                                cout << "El heroe ha sido herido con un envenenamiento nivel " << heroes[i].getPoison() << endl;
-                            }*/
                         }
                     }else{
                         gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "El enemigo no puede atacar desde esta posicion" << endl;
         }
@@ -1734,16 +1606,16 @@ void Ataque::NecromancerSkill_WillingFlesh(int turno, Heroe heroes[4], Enemigo e
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige sangrado
 void Ataque::NecromancerSkill_CrawlingDead(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitbleed;
     int random;
     float skillDamage = 0.8;
     int rangeMin = 0;
     int rangeMax = 1;
     int objetivos = 2;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1754,41 +1626,33 @@ void Ataque::NecromancerSkill_CrawlingDead(int turno, Heroe heroes[4], Enemigo e
         limpiarHabilidades();
         gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
         if(enemigos[turno].getPosition()>=0&&enemigos[turno].getPosition()<=3){
-            enemigos[turno].setCritic(6);
-            enemigos[turno].setAccuracy(100);
+            enemigos[turno].setCritic(5);
+            enemigos[turno].setAccuracy(93);
             for(int i=rangeMin;i<=rangeMax;i++){
                 hit = rand()%100;
                 if(heroes[i].getHealth()>0){
                     if(hit<(enemigos[turno].getAccuracy()-heroes[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-heroes[i].getProtection())*0.01);
+                        damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
-                            heroes[i].setHealth(heroes[i].getHealth()-((enemigos[turno].getDamage()*skillDamage)*1.5));
+                            heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            heroes[i].setHealth(heroes[i].getHealth()-(enemigos[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()*skillDamage) << endl;
+                            heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(heroes[i].getHealth()<=0){
                             gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
-                            /*hitbleed = rand()%100;
-                            if(hitbleed<heroes[i].getChanceBleed()){
-                                heroes[i].setBleed(3);
-                                cout << "El heroe ha sido herido con un sangrado nivel " << heroes[i].getBleed() << endl;
-                            }*/
                         }
                     }else{
                         gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "El enemigo no puede atacar desde esta posicion" << endl;
         }
@@ -1796,16 +1660,16 @@ void Ataque::NecromancerSkill_CrawlingDead(int turno, Heroe heroes[4], Enemigo e
         gotoxyAtaque(41,24);cout << "No hay objetivos" << endl;
     }
 }
-//Inflige paralisis
 void Ataque::NecromancerSkill_SixFeetUnder(int turno, Heroe heroes[4], Enemigo enemigos[4]){
     int hit;
     int hitcritical;
-    int hitstun;
     int random;
-    float skillDamage = 0.2;
+    float skillDamage = 0.5;
     int rangeMin = 0;
     int rangeMax = 3;
     int objetivos = 4;
+    float protect;
+    int damageReceive;
     srand(time(NULL));
     for(int i=rangeMin;i<=rangeMax;i++){
         if(heroes[i].getHealth()<=0){
@@ -1816,41 +1680,33 @@ void Ataque::NecromancerSkill_SixFeetUnder(int turno, Heroe heroes[4], Enemigo e
         limpiarHabilidades();
         gotoxyAtaque(41,22);cout<<"ESTADO DEL ATAQUE:";
         if(enemigos[turno].getPosition()>=0&&enemigos[turno].getPosition()<=3){
-            enemigos[turno].setCritic(1);
-            enemigos[turno].setAccuracy(100);
+            enemigos[turno].setCritic(2);
+            enemigos[turno].setAccuracy(93);
             for(int i=rangeMin;i<=rangeMax;i++){
                 hit = rand()%100;
                 if(heroes[i].getHealth()>0){
                     if(hit<(enemigos[turno].getAccuracy()-heroes[i].getDodge())){
                         hitcritical = rand()%100;
+                        protect = ((100-heroes[turno].getProtection())*0.01);
+                        damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
-                            heroes[i].setHealth(heroes[i].getHealth()-((enemigos[turno].getDamage()*skillDamage)*1.5));
+                            heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << ((enemigos[turno].getDamage()*skillDamage)*1.5) << endl;
+                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                         }else{
-                            heroes[i].setHealth(heroes[i].getHealth()-(enemigos[turno].getDamage()*skillDamage));
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (enemigos[turno].getDamage()*skillDamage) << endl;
+                            heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
                         }
                         if(heroes[i].getHealth()<=0){
                             gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
-                            /*hitstun = rand()%100;
-                            if(hitstun<(heroes[i].getChanceStun()-10)){
-                                heroes[i].setStun(1);
-                                cout << "El heroe ha sido aturdido " << endl;
-                            }*/
                         }
                     }else{
                         gotoxyAtaque(41,24);cout << "El enemigo fallo el ataque" << endl;
                     }
                 }
             }
-            /*for(int i=0;i<4;i++){
-                if(enemigos[i].getHealth()>0){
-                    cout << "Vida del heroe " << i << ": " << heroes[i].getHealth() << endl;
-                }
-            }*/
         }else{
             gotoxyAtaque(41,24);cout << "El enemigo no puede atacar desde esta posicion" << endl;
         }

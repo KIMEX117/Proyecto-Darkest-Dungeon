@@ -31,74 +31,46 @@ void gotoxy(int x, int y){
 void crearCrusader(Heroe heroes[4]){
     heroes[0].setName("Crusader");
     heroes[0].setMaxHealth(33);
-    heroes[0].setHealth(33);
+    heroes[0].setHealth(33);//33
     heroes[0].setAccuracy(0);
     heroes[0].setDamage(9);
     heroes[0].setCritic(0);
-    heroes[0].setDodge(5);
-    heroes[0].setProtection(10);
+    heroes[0].setDodge(8);
+    heroes[0].setProtection(23);
     heroes[0].setPosition(0);
-    heroes[0].setChanceBleed(30);
-    heroes[0].setChancePoison(30);
-    heroes[0].setChanceStun(40);
-    heroes[0].setChanceDie(70);
-    heroes[0].setBleed(0);
-    heroes[0].setPoison(0);
-    heroes[0].setStun(0);
 }
 void crearHighwayman(Heroe heroes[4]){
     heroes[1].setName("Highwayman");
-    heroes[1].setMaxHealth(23);
-    heroes[1].setHealth(23);
+    heroes[1].setMaxHealth(26);
+    heroes[1].setHealth(26);//26
     heroes[1].setAccuracy(0);
     heroes[1].setDamage(8);
     heroes[1].setCritic(0);
-    heroes[1].setDodge(10);
-    heroes[1].setProtection(0);
+    heroes[1].setDodge(14);
+    heroes[1].setProtection(19);
     heroes[1].setPosition(1);
-    heroes[1].setChanceBleed(30);
-    heroes[1].setChancePoison(30);
-    heroes[1].setChanceStun(30);
-    heroes[1].setChanceDie(70);
-    heroes[1].setBleed(0);
-    heroes[1].setPoison(0);
-    heroes[1].setStun(0);
 }
 void crearVestal(Heroe heroes[4]){
     heroes[2].setName("Vestal");
     heroes[2].setMaxHealth(24);
-    heroes[2].setHealth(24);
+    heroes[2].setHealth(24);//24
     heroes[2].setAccuracy(0);
     heroes[2].setDamage(6);
     heroes[2].setCritic(0);
-    heroes[2].setDodge(0);
-    heroes[2].setProtection(0);
+    heroes[2].setDodge(10);
+    heroes[2].setProtection(15);
     heroes[2].setPosition(2);
-    heroes[2].setChanceBleed(40);
-    heroes[2].setChancePoison(30);
-    heroes[2].setChanceStun(30);
-    heroes[2].setChanceDie(70);
-    heroes[2].setBleed(0);
-    heroes[2].setPoison(0);
-    heroes[2].setStun(0);
 }
 void crearDoctor(Heroe heroes[4]){
     heroes[3].setName("Plague Doctor");
-    heroes[3].setMaxHealth(22);
-    heroes[3].setHealth(22);
+    heroes[3].setMaxHealth(23);
+    heroes[3].setHealth(23);//23
     heroes[3].setAccuracy(0);
-    heroes[3].setDamage(5);
+    heroes[3].setDamage(7);
     heroes[3].setCritic(0);
-    heroes[3].setDodge(10);
-    heroes[3].setProtection(0);
+    heroes[3].setDodge(12);
+    heroes[3].setProtection(13);
     heroes[3].setPosition(3);
-    heroes[3].setChanceBleed(20);
-    heroes[3].setChancePoison(60);
-    heroes[3].setChanceStun(20);
-    heroes[3].setChanceDie(70);
-    heroes[3].setBleed(0);
-    heroes[3].setPoison(0);
-    heroes[3].setStun(0);
 }
 //CREAR ENEMIGOS
 void crearSoldier(int creacion, Enemigo enemigos[4]){
@@ -111,80 +83,50 @@ void crearSoldier(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setDodge(10);
     enemigos[creacion].setProtection(15);
     enemigos[creacion].setPosition(creacion);
-    enemigos[creacion].setChanceBleed(10);
-    enemigos[creacion].setChancePoison(90);
-    enemigos[creacion].setChanceStun(75);
-    enemigos[creacion].setBleed(0);
-    enemigos[creacion].setPoison(0);
-    enemigos[creacion].setStun(0);
 }
 void crearArbalist(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Arbalist");
-    enemigos[creacion].setMaxHealth(15);
-    enemigos[creacion].setHealth(15);//15
+    enemigos[creacion].setMaxHealth(14);
+    enemigos[creacion].setHealth(14);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(6);
-    enemigos[creacion].setCritic(0);
-    enemigos[creacion].setDodge(10);
-    enemigos[creacion].setProtection(5);
-    enemigos[creacion].setPosition(creacion);
-    enemigos[creacion].setChanceBleed(10);
-    enemigos[creacion].setChancePoison(90);
-    enemigos[creacion].setChanceStun(90);
-    enemigos[creacion].setBleed(0);
-    enemigos[creacion].setPoison(0);
-    enemigos[creacion].setStun(0);
-}
-void crearDefender(int creacion, Enemigo enemigos[4]){
-    enemigos[creacion].setName("Skeleton Defender");
-    enemigos[creacion].setMaxHealth(17);
-    enemigos[creacion].setHealth(17);//17
-    enemigos[creacion].setAccuracy(0);
-    enemigos[creacion].setDamage(5);
-    enemigos[creacion].setCritic(0);
-    enemigos[creacion].setDodge(10);
-    enemigos[creacion].setProtection(25);
-    enemigos[creacion].setPosition(creacion);
-    enemigos[creacion].setChanceBleed(10);
-    enemigos[creacion].setChancePoison(90);
-    enemigos[creacion].setChanceStun(75);
-    enemigos[creacion].setBleed(0);
-    enemigos[creacion].setPoison(0);
-    enemigos[creacion].setStun(0);
-}
-void crearCaptain(int creacion, Enemigo enemigos[4]){
-    enemigos[creacion].setName("Skeleton Captain");
-    enemigos[creacion].setMaxHealth(40);
-    enemigos[creacion].setHealth(40);//40
-    enemigos[creacion].setAccuracy(0);
-    enemigos[creacion].setDamage(7);
-    enemigos[creacion].setCritic(0);
-    enemigos[creacion].setDodge(9);
-    enemigos[creacion].setProtection(33);
-    enemigos[creacion].setPosition(creacion);
-    enemigos[creacion].setChanceBleed(10);
-    enemigos[creacion].setChancePoison(70);
-    enemigos[creacion].setChanceStun(35);
-    enemigos[creacion].setBleed(0);
-    enemigos[creacion].setPoison(0);
-    enemigos[creacion].setStun(0);
-}
-void crearNecromancer(int creacion, Enemigo enemigos[4]){
-    enemigos[creacion].setName("Necromancer");
-    enemigos[creacion].setMaxHealth(105);
-    enemigos[creacion].setHealth(105);
-    enemigos[creacion].setAccuracy(0);
-    enemigos[creacion].setDamage(5);
     enemigos[creacion].setCritic(0);
     enemigos[creacion].setDodge(5);
     enemigos[creacion].setProtection(5);
     enemigos[creacion].setPosition(creacion);
-    enemigos[creacion].setChanceBleed(80);
-    enemigos[creacion].setChancePoison(80);
-    enemigos[creacion].setChanceStun(25);
-    enemigos[creacion].setBleed(0);
-    enemigos[creacion].setPoison(0);
-    enemigos[creacion].setStun(0);
+}
+void crearDefender(int creacion, Enemigo enemigos[4]){
+    enemigos[creacion].setName("Skeleton Defender");
+    enemigos[creacion].setMaxHealth(16);
+    enemigos[creacion].setHealth(16);//16
+    enemigos[creacion].setAccuracy(0);
+    enemigos[creacion].setDamage(4);
+    enemigos[creacion].setCritic(0);
+    enemigos[creacion].setDodge(7);
+    enemigos[creacion].setProtection(25);
+    enemigos[creacion].setPosition(creacion);
+}
+void crearCaptain(int creacion, Enemigo enemigos[4]){
+    enemigos[creacion].setName("Skeleton Captain");
+    enemigos[creacion].setMaxHealth(28);
+    enemigos[creacion].setHealth(28);//28
+    enemigos[creacion].setAccuracy(0);
+    enemigos[creacion].setDamage(6);
+    enemigos[creacion].setCritic(0);
+    enemigos[creacion].setDodge(1);
+    enemigos[creacion].setProtection(33);
+    enemigos[creacion].setPosition(creacion);
+}
+void crearNecromancer(int creacion, Enemigo enemigos[4]){
+    enemigos[creacion].setName("Necromancer");
+    enemigos[creacion].setMaxHealth(95);
+    enemigos[creacion].setHealth(95);
+    enemigos[creacion].setAccuracy(0);
+    enemigos[creacion].setDamage(5);
+    enemigos[creacion].setCritic(0);
+    enemigos[creacion].setDodge(2);
+    enemigos[creacion].setProtection(5);
+    enemigos[creacion].setPosition(creacion);
 }
 //HABILIDADES DE HEROES
 void crusaderSkills(int turno, Heroe heroes[4], Enemigo enemigos[4]){
@@ -822,6 +764,7 @@ void necromancerSkills(int turno, Heroe heroes[4], Enemigo enemigos[4]){
             break;
         case 3:
             Ataque().NecromancerSkill_SixFeetUnder(turno,heroes,enemigos);
+            break;
         default:
             break;
     }
@@ -831,7 +774,7 @@ void movimientoEscenario();
 //PINTAR EN PANTALLA
 void pintarMarcoJugar();
 void pintarMarco();
-void pintarescenario();
+void pintarEscenario();
 void pintarBatalla();
 bool pintarCombate(char matrizJuego[20][185], bool copia);
 void repintarPersonajes(Heroe heroes[4],Enemigo enemigos[4]);
@@ -839,16 +782,15 @@ void borrarHabilidades();
 void borrarEnemigosStats(Heroe heroes[4]);
 void vidaPersonajes(Heroe heroes[4],Enemigo enemigos[4]);
 void pintarmapa();
-void plagueDoctor();
-//void puntaje();
-void vestal();
-void highwayman();
-void crusader();
-void captain();
-void defender();
-void soldier();
-void arbalist();
-void necromancer();
+void plagueDoctor(int pos_X_Personaje);
+void vestal(int pos_X_Personaje);
+void highwayman(int pos_X_Personaje);
+void crusader(int pos_X_Personaje);
+void captain(int pos_X_Personaje);
+void defender(int pos_X_Personaje);
+void soldier(int pos_X_Personaje);
+void arbalist(int pos_X_Personaje);
+void necromancer(int pos_X_Personaje);
 void pintarCastillo();
 void pintarTitulo();
 void pintarMenu(int p);
@@ -883,7 +825,7 @@ void opcionJuego(int opcion){
     }
 }
 //FUNCION PRINCIPAL PARA EL DESARROLLO DEL GAMEPLAY
-void pintarescenario(){
+void pintarEscenario(){
     //JUEGO CONTINUO
     bool on=true;
     //POSICIONES DEL ESCENARIO
@@ -891,15 +833,15 @@ void pintarescenario(){
     int movimiento=1;
     bool desplazamiento=true;
     //POSICION EN EL MAPA Y EVENTOS
-    int randomCaracter = 0;
-    srand (time(NULL));
+    //int randomCaracter = 0;
+    //srand (time(NULL));
     int posicion_actual = 0;
     //PUNTOS DE LOS NIVELES
     int puntos_cofre = 0;
     int puntos_enemigos = 0;
     int puntos_obtenidos = 0;
     //VARIABLES NIVEL
-    int opcion=0;
+    //int opcion=0;
     bool pasillo=false;
     bool nivel_1=true;
     bool nivel_2=false;
@@ -971,13 +913,6 @@ void pintarescenario(){
                               '_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','"','=','.','o','|','o','_','.','-','-','"','"','_','_','_','/','_','_','_',
                               '_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/'};
 
-    /*char matrizCombate[20][91];
-    for(int i=0;i<20;i++){
-        for(int j=93;j<184;j++){
-            matrizCombate[i][j-93]=matrizJuego[i][j];
-        }
-    }*/
-
     while(on)
     {
         //PRINTEAR TODO DEL MISMO COLOR
@@ -1035,13 +970,8 @@ void pintarescenario(){
             impresion_Y_mapa--;
         }
 
-
-
-        //HEROES (PARA QUE SE IMPRIMAN SI MUEREN SOLO VALIDAR LA VIDA)
-        plagueDoctor();
-        vestal();
-        highwayman();
-        crusader();
+        //IMPRESION DE HEROES EN EL ESCENARIO
+        repintarPersonajes(heroes,enemigos);
 
         //CAPTURA DE TECLA PARA EVITAR QUE ESTE PARPADEANDO DEMASIADO
         char tecla = getch();
@@ -1072,6 +1002,15 @@ void pintarescenario(){
                     if(pos_x==89&&mapa[posicion_actual+1]=='I'){
                         puntos_cofre = rand() % 100+50;
                         puntos_obtenidos += puntos_cofre;
+                        /*for(int i=0;i<4;i++){
+                            if(heroes[i].getHealth()>0){
+                                heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
+                                heroes[i].setHealth(heroes[i].getHealth()+3);
+                                heroes[i].setDamage(heroes[i].getDamage()+2);
+                                heroes[i].setDodge(heroes[i].getDodge()+5);
+                                heroes[i].setProtection(heroes[i].getProtection()+8);
+                            }
+                        }*/
                     }
                     if(pos_x==94){
                         pasillo=false;
@@ -1087,6 +1026,9 @@ void pintarescenario(){
                         pos_x=0;
                     }
                 }
+                if(mapa[11]=='O'){
+                        activo=true;
+                }
             }
             if(nivel_F==true){
                 if(pos_x<94){
@@ -1101,6 +1043,15 @@ void pintarescenario(){
                     if(pos_x==89&&mapa[posicion_actual+1]=='I'){
                         puntos_cofre = rand() % 100+50;
                         puntos_obtenidos += puntos_cofre;
+                        /*for(int i=0;i<4;i++){
+                            if(heroes[i].getHealth()>0){
+                                heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
+                                heroes[i].setHealth(heroes[i].getHealth()+3);
+                                heroes[i].setDamage(heroes[i].getDamage()+2);
+                                heroes[i].setDodge(heroes[i].getDodge()+5);
+                                heroes[i].setProtection(heroes[i].getProtection()+8);
+                            }
+                        }*/
                     }
                     if(pos_x==94){
                         pasillo=false;
@@ -1115,6 +1066,9 @@ void pintarescenario(){
                         }
                         pos_x=0;
                     }
+                }
+                if(mapa[20]=='O'){
+                        activo=true;
                 }
             }
         }
@@ -1144,38 +1098,23 @@ void pintarescenario(){
                 }
             }
         }
-        if(tecla=='s'){
-            pintarCombate(matrizJuego,copia);
-        }
-/*===============================================================================================
+/*===========================================================================================================
                                     C O M B A T E S
 
         TAMAÑO DE RECUADROS DE INFORMACION                          ENEMIGOS POR NIVEL
-                                                        NIVEL 1:(CAPTAIN,DEFENDER,SOLDIER Y ARBALIST)
-    AREA STATS HEROES         AREA DE HABILIDADES       NIVEL 2:( )
-        7 x 39                       7 x 51             NIVEL F:(NECROMANCER,)
-===============================================================================================*/
+                                                        NIVEL 1:(DEFENDER,SOLDIER,SOLDIER Y ARBALIST)
+    AREA STATS HEROES         AREA DE HABILIDADES       NIVEL 2:(CAPTAIN,DEFENDER,ARBALIST Y ARBALIST)
+        7 x 39                       7 x 51             NIVEL F:(NECROMANCER,SOLDIER, SOLDIER Y ARBALIST)
+===========================================================================================================*/
         //CODIGO DE COMBATES
         if(pos_x==94&&desplazamiento==true&&pasillo==false&&combate==false){
             desplazamiento=false;
             combate=true;
-            //COMBATE DEL PRIMER NIVEL (CAPTAIN,DEFENDER,SOLDIER Y ARBALIST)
+            //COMBATE DEL PRIMER NIVEL (DEFENDER,SOLDIER,SOLDIER Y ARBALIST)
             if(nivel_1==true&&combate==true){
-                //ESTA PARTE ESTA COMENTADA EN CASO DE QUE SEA NECESARIO RESETEAR LA VIDA DE LOS HEROES CADA QUE INICIA UNA BATALLA
-                //DE LO CONTRARIO SE MANTENDRAN MUERTOS O HERIDOS HASTA EL SIGUIENTE COMBATE DEBIDO A ESTO ESTAN INSTANCIADOS ARRIBA
-                //JUNTO CON LAS DEMAS VARIABLES
-                /*Enemigo enemigos[4];
-                Heroe heroes[4];
-                int heroesvivos = 4;
-                int enemigosvivos = 4;
-                //CREACION DE HEROES
-                crearCrusader(heroes);
-                crearHighwayman(heroes);
-                crearVestal(heroes);
-                crearDoctor(heroes);*/
                 //CREACION DE ENEMIGOS
-                crearCaptain(0,enemigos);
-                crearDefender(1,enemigos);
+                crearDefender(0,enemigos);
+                crearSoldier(1,enemigos);
                 crearSoldier(2,enemigos);
                 crearArbalist(3,enemigos);
                 //CICLO DE TURNOS DEL COMBATE
@@ -1188,18 +1127,16 @@ void pintarescenario(){
                     pintarCombate(matrizJuego,copia);
                     //REPINTADO DE HEROES
                     repintarPersonajes(heroes,enemigos);
-                    //Sleep(100);
                     //TURNOS DEL COMBATE
                     if(heroes[turno].getHealth()>0){
-                        //pintarCombate(matrizJuego,copia);
                         if(turno==0&&enemigosvivos>0){
                             if(heroes[turno].getMaxHealth()==33){
                                 crusaderSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==23){
+                            }else if(heroes[turno].getMaxHealth()==26){
                                 highwaymanSkills(turno,heroes,enemigos);
                             }else if(heroes[turno].getMaxHealth()==24){
                                 vestalSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==22){
+                            }else if(heroes[turno].getMaxHealth()==23){
                                 doctorSkills(turno,heroes,enemigos);
                             }
                             turno++;
@@ -1209,6 +1146,8 @@ void pintarescenario(){
                             pintarMarcoJugar();
                             gotoxy(1,28);cout<<"                                       ";
                         }
+                    }else{
+                        turno++;
                     }
                     pintarCombate(matrizJuego,copia);
                     repintarPersonajes(heroes,enemigos);
@@ -1216,11 +1155,11 @@ void pintarescenario(){
                         if(turno==1&&enemigosvivos>0){
                             if(heroes[turno].getMaxHealth()==33){
                                 crusaderSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==23){
+                            }else if(heroes[turno].getMaxHealth()==26){
                                 highwaymanSkills(turno,heroes,enemigos);
                             }else if(heroes[turno].getMaxHealth()==24){
                                 vestalSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==22){
+                            }else if(heroes[turno].getMaxHealth()==23){
                                 doctorSkills(turno,heroes,enemigos);
                             }
                             turno++;
@@ -1239,11 +1178,11 @@ void pintarescenario(){
                         if(turno==2&&enemigosvivos>0){
                             if(heroes[turno].getMaxHealth()==33){
                                 crusaderSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==23){
+                            }else if(heroes[turno].getMaxHealth()==26){
                                 highwaymanSkills(turno,heroes,enemigos);
                             }else if(heroes[turno].getMaxHealth()==24){
                                 vestalSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==22){
+                            }else if(heroes[turno].getMaxHealth()==23){
                                 doctorSkills(turno,heroes,enemigos);
                             }
                             turno++;
@@ -1262,11 +1201,11 @@ void pintarescenario(){
                         if(turno==3&&enemigosvivos>0){
                             if(heroes[turno].getMaxHealth()==33){
                                 crusaderSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==23){
+                            }else if(heroes[turno].getMaxHealth()==26){
                                 highwaymanSkills(turno,heroes,enemigos);
                             }else if(heroes[turno].getMaxHealth()==24){
                                 vestalSkills(turno,heroes,enemigos);
-                            }else if(heroes[turno].getMaxHealth()==22){
+                            }else if(heroes[turno].getMaxHealth()==23){
                                 doctorSkills(turno,heroes,enemigos);
                             }
                             turno++;
@@ -1285,13 +1224,13 @@ void pintarescenario(){
                         if(enemigos[i].getHealth()>0){
                             if(enemigos[i].getMaxHealth()==10){
                                 soldierSkills(i,heroes,enemigos);
-                            }else if(enemigos[i].getMaxHealth()==15){
+                            }else if(enemigos[i].getMaxHealth()==14){
                                 arbalistSkills(i,heroes,enemigos);
-                            }else if(enemigos[i].getMaxHealth()==17){
+                            }else if(enemigos[i].getMaxHealth()==16){
                                 defenderSkills(i,heroes,enemigos);
-                            }else if(enemigos[i].getMaxHealth()==40){
+                            }else if(enemigos[i].getMaxHealth()==28){
                                 captainSkills(i,heroes,enemigos);
-                            }else if(enemigos[i].getMaxHealth()==105){
+                            }else if(enemigos[i].getMaxHealth()==95){
                                 necromancerSkills(i,heroes,enemigos);
                             }
                             vidaPersonajes(heroes,enemigos);
@@ -1320,7 +1259,7 @@ void pintarescenario(){
                     puntos_enemigos = rand() % 100+50;
                     puntos_obtenidos += puntos_enemigos;
                     gotoxy(57,25);cout << "HAS GANADO EL COMBATE";
-                    Sleep(1500);
+                    Sleep(2000);
                     do{
                         borrarHabilidades();
                         gotoxy(60,23);cout << "~ PASILLOS ~";
@@ -1364,134 +1303,368 @@ void pintarescenario(){
                 }
                 if(enemigosvivos>0&&heroesvivos<=0){
                     gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    Sleep(2500);
+                    gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
+                    gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
+                    Sleep(2000);
                     on=false;
                 }
             }
-            //COMBATE DEL PRIMER NIVEL ( )
+            //COMBATE DEL SEGUNDO NIVEL (CAPTAIN,DEFENDER,ARBALIST Y ARBALIST)
             if(nivel_2==true&&combate==true){
-            }
-            //COMBATE DEL TERCER NIVEL (NECROMANCER, )
-            if(nivel_F==true&&combate==true){
-            }
-        }
-
-/*============================================================================================
-    ~ELECCION DE CAMINO A RECORRER~
-    Este codigo era el original empleado para elegir el camino, sin embargo tuvo que omitirse algunas partes
-                    y modificado en otras para que pudiera ser usado en el combate
-============================================================================================*/
-        /* */
-        /*
-        if(pos_x==94&&pasillo==false&&(nivel_1==true||nivel_2==true)&&activo==false){
-            opcionJuego(opcion);
-            Sleep(500);
-            if (GetAsyncKeyState(VK_LEFT)){
-                opcion=0;
-            }
-            if (GetAsyncKeyState(VK_RIGHT)){
-                opcion=1;
-            }
-            if (GetAsyncKeyState(VK_RETURN)){
-                switch(opcion){
-                    case 0:
+                cout<<"Pasillo: FALSO"<<endl;
+                //CREACION DE ENEMIGOS
+                enemigosvivos = 4;
+                crearCaptain(0,enemigos);
+                crearSoldier(1,enemigos);
+                crearArbalist(2,enemigos);
+                crearArbalist(3,enemigos);
+                //CICLO DE TURNOS DEL COMBATE
+                while(enemigosvivos>0&&heroesvivos>0&&activo==true){
+                    enemigosvivos = 4;
+                    heroesvivos = 4;
+                    int turno = 0;
+                    vidaPersonajes(heroes,enemigos);
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    //TURNOS DEL COMBATE
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==0&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==1&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==2&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==3&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    for(int i=0;i<4;i++){
+                        if(enemigos[i].getHealth()>0){
+                            if(enemigos[i].getMaxHealth()==10){
+                                soldierSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==14){
+                                arbalistSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==16){
+                                defenderSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==28){
+                                captainSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==95){
+                                necromancerSkills(i,heroes,enemigos);
+                            }
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    for(int i=0;i<4;i++){
+                        if(enemigos[i].getHealth()<=0){
+                            enemigosvivos--;
+                        }
+                    }
+                    for(int i=0;i<4;i++){
+                        if(heroes[i].getHealth()<=0){
+                            heroesvivos--;
+                        }
+                    }
+                }
+                //CONDICION DE VICTORIA
+                if(heroesvivos>0&&enemigosvivos<=0){
+                    int op_pasillo=0;
+                    puntos_enemigos = rand() % 100+50;
+                    puntos_obtenidos += puntos_enemigos;
+                    gotoxy(57,25);cout << "HAS GANADO EL COMBATE";
+                    Sleep(2000);
+                    do{
+                        borrarHabilidades();
+                        gotoxy(60,23);cout << "~ PASILLOS ~";
+                        gotoxy(60,24);cout<<"1. Izquierda";
+                        gotoxy(60,25);cout<<"2. Derecha";
+                        gotoxy(60,26);cout<<"Opcion: ";cin>>op_pasillo;
+                    }while(op_pasillo<1||op_pasillo>2);
+                    if(op_pasillo==1){
                         posicion_actual++;
                         mapa[posicion_actual] = 'O';
                         mapa[posicion_actual-1] = ' ';
-                        if(nivel_1==true){
-                            nivel_1=false;
-                            nivel_2=true;
-                            pasillo=true;
-                            mapa[7]='I';
-                            mapa[10]='*';
-                            // RANDOM PARA LOS SIGNOS DE INTERROGACION
-                            //for(int i=0;i<2;i++){
-                                randomCaracter=rand()%10;
-                                if(i==0&&randomCaracter<=5){
-                                    mapa[7]='I';
-                                }else{
-                                    mapa[7]='*';
-                                }
-                                if(i==1&&randomCaracter<=5){
-                                    mapa[10]='I';
-                                }else{
-                                    mapa[10]='*';
-                                }
-                            }
-                        }
-                        if(nivel_1==false&&nivel_2==true&&pasillo==false){
+                        if(nivel_2==true){
                             nivel_2=false;
                             nivel_F=true;
                             pasillo=true;
                             mapa[16]='*';
                             mapa[19]='I';
-                            // RANDOM PARA LOS SIGNOS DE INTERROGACION
-                            //for(int i=0;i<2;i++){
-                                randomCaracter=rand()%10;
-                                if(i==0&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[16]='I';
-                                }else{
-                                    mapa[16]='*';
-                                }
-                                if(i==1&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[19]='I';
-                                }else{
-                                    mapa[19]='*';
-                                }
-                            }
                         }
                         pos_x = 0;
-                        break;
-                    case 1:
+                    }
+                    if(op_pasillo==2){
                         posicion_actual+=4;
                         mapa[posicion_actual] = 'O';
                         mapa[posicion_actual-4] = ' ';
-                        if(nivel_1==true){
-                            nivel_1=false;
-                            nivel_2=true;
-                            pasillo=true;
-                            mapa[7]='I';
-                            mapa[10]='*';
-                            // RANDOM PARA LOS SIGNOS DE INTERROGACION
-                            //for(int i=0;i<2;i++){
-                                randomCaracter=rand()%10;
-                                if(i==0&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[7]='I';
-                                }else{
-                                    mapa[7]='*';
-                                }
-                                if(i==1&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[10]='I';
-                                }else{
-                                    mapa[10]='*';
-                                }
-                            }
-                        }
-                        if(nivel_1==false&&nivel_2==true&&pasillo==false){
+                        if(nivel_2==true){
                             nivel_2=false;
                             nivel_F=true;
                             pasillo=true;
                             mapa[16]='*';
                             mapa[19]='I';
-                            // RANDOM PARA LOS SIGNOS DE INTERROGACION
-                            //for(int i=0;i<2;i++){
-                                randomCaracter=rand()%10;
-                                if(i==0&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[16]='I';
-                                }else{
-                                    mapa[16]='*';
-                                }
-                                if(i==1&&randomCaracter>=0&&randomCaracter<=5){
-                                    mapa[19]='I';
-                                }else{
-                                    mapa[19]='*';
-                                }
-                            }
                         }
                         pos_x = 0;
-                        break;
+                    }
+                    Sleep(100);
+                    borrarHabilidades();
+                    borrarEnemigosStats(heroes);
+                    desplazamiento=true;
+                    combate=false;
+                    activo=false;
+                    pintarMarcoJugar();
+                }
+                if(enemigosvivos>0&&heroesvivos<=0){
+                    gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    Sleep(2500);
+                    gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
+                    gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
+                    Sleep(2000);
+                    on=false;
                 }
             }
-        }*/
+            //COMBATE DEL TERCER NIVEL (NECROMANCER,SOLDIER, SOLDIER Y ARBALIST)
+            if(nivel_F==true&&combate==true){
+                //CREACION DE ENEMIGOS
+                enemigosvivos = 4;
+                crearNecromancer(0,enemigos);
+                crearSoldier(1,enemigos);
+                crearSoldier(2,enemigos);
+                crearArbalist(3,enemigos);
+                //CICLO DE TURNOS DEL COMBATE
+                while(enemigosvivos>0&&heroesvivos>0&&activo==true){
+                    enemigosvivos = 4;
+                    heroesvivos = 4;
+                    int turno = 0;
+                    vidaPersonajes(heroes,enemigos);
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    //TURNOS DEL COMBATE
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==0&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==1&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==2&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    if(heroes[turno].getHealth()>0){
+                        if(turno==3&&enemigosvivos>0){
+                            if(heroes[turno].getMaxHealth()==33){
+                                crusaderSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==26){
+                                highwaymanSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==24){
+                                vestalSkills(turno,heroes,enemigos);
+                            }else if(heroes[turno].getMaxHealth()==23){
+                                doctorSkills(turno,heroes,enemigos);
+                            }
+                            turno++;
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }else{
+                        turno++;
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    for(int i=0;i<4;i++){
+                        if(enemigos[i].getHealth()>0){
+                            if(enemigos[i].getMaxHealth()==10){
+                                soldierSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==14){
+                                arbalistSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==16){
+                                defenderSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==28){
+                                captainSkills(i,heroes,enemigos);
+                            }else if(enemigos[i].getMaxHealth()==95){
+                                necromancerSkills(i,heroes,enemigos);
+                            }
+                            vidaPersonajes(heroes,enemigos);
+                            Sleep(3000);
+                            borrarHabilidades();
+                            pintarMarcoJugar();
+                            gotoxy(1,28);cout<<"                                       ";
+                        }
+                    }
+                    pintarCombate(matrizJuego,copia);
+                    repintarPersonajes(heroes,enemigos);
+                    for(int i=0;i<4;i++){
+                        if(enemigos[i].getHealth()<=0){
+                            enemigosvivos--;
+                        }
+                    }
+                    for(int i=0;i<4;i++){
+                        if(heroes[i].getHealth()<=0){
+                            heroesvivos--;
+                        }
+                    }
+                }
+                //CONDICION DE VICTORIA
+                if(heroesvivos>0&&enemigosvivos<=0){
+                    puntos_enemigos = rand() % 100+50;
+                    puntos_obtenidos += puntos_enemigos;
+                    gotoxy(57,25);cout << "HAS GANADO EL COMBATE";
+                    Sleep(2000);
+                }
+                if(enemigosvivos>0&&heroesvivos<=0){
+                    gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    Sleep(2500);
+                    gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
+                    gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
+                    Sleep(2000);
+                    on=false;
+                }
+            }
+        }
     }
 }
 //PRINTEAR STATS DE VIDA Y BORRAR
@@ -1626,120 +1799,235 @@ bool pintarCombate(char matrizJuego[20][185], bool copia){
 }
 //REPINTADO DE TODOS LOS PERSONAJES EN BATALLA VALIDANDO SU VIDA
 void repintarPersonajes(Heroe heroes[4],Enemigo enemigos[4]){
+    int pos_X_Personaje=0;
     //HEROES
     for(int i=0;i<4;i++){
-        if(heroes[i].getMaxHealth()==33&&heroes[i].getHealth()>0){
-            crusader();
-        }else if(heroes[i].getMaxHealth()==23&&heroes[i].getHealth()>0){
-            highwayman();
-        }else if(heroes[i].getMaxHealth()==24&&heroes[i].getHealth()>0){
-            vestal();
-        }else if(heroes[i].getMaxHealth()==22&&heroes[i].getHealth()>0){
-            plagueDoctor();
+        switch(i){
+            case 0:
+                pos_X_Personaje=37;
+                if(heroes[i].getMaxHealth()==33&&heroes[i].getHealth()>0){
+                    crusader(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==26&&heroes[i].getHealth()>0){
+                    highwayman(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==24&&heroes[i].getHealth()>0){
+                    vestal(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==23&&heroes[i].getHealth()>0){
+                    plagueDoctor(pos_X_Personaje);
+                }
+                break;
+            case 1:
+                pos_X_Personaje=25;
+                if(heroes[i].getMaxHealth()==33&&heroes[i].getHealth()>0){
+                    crusader(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==26&&heroes[i].getHealth()>0){
+                    highwayman(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==24&&heroes[i].getHealth()>0){
+                    vestal(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==23&&heroes[i].getHealth()>0){
+                    plagueDoctor(pos_X_Personaje);
+                }
+                break;
+            case 2:
+                pos_X_Personaje=14;
+                if(heroes[i].getMaxHealth()==33&&heroes[i].getHealth()>0){
+                    crusader(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==26&&heroes[i].getHealth()>0){
+                    highwayman(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==24&&heroes[i].getHealth()>0){
+                    vestal(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==23&&heroes[i].getHealth()>0){
+                    plagueDoctor(pos_X_Personaje);
+                }
+                break;
+            case 3:
+                pos_X_Personaje=2;
+                if(heroes[i].getMaxHealth()==33&&heroes[i].getHealth()>0){
+                    crusader(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==26&&heroes[i].getHealth()>0){
+                    highwayman(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==24&&heroes[i].getHealth()>0){
+                    vestal(pos_X_Personaje);
+                }else if(heroes[i].getMaxHealth()==23&&heroes[i].getHealth()>0){
+                    plagueDoctor(pos_X_Personaje);
+                }
+                break;
         }
     }
     //ENEMIGOS
     for(int i=0;i<5;i++){
-        if(enemigos[i].getMaxHealth()==10&&enemigos[i].getHealth()>0){
-            soldier();
-        }else if(enemigos[i].getMaxHealth()==15&&enemigos[i].getHealth()>0){
-            arbalist();
-        }else if(enemigos[i].getMaxHealth()==17&&enemigos[i].getHealth()>0){
-            defender();
-        }else if(enemigos[i].getMaxHealth()==40&&enemigos[i].getHealth()>0){
-            captain();
-        }else if(enemigos[i].getMaxHealth()==105&&enemigos[i].getHealth()>0){
-            necromancer();
+        switch(i){
+            case 0:
+                pos_X_Personaje=49;
+                if(enemigos[i].getMaxHealth()==10&&enemigos[i].getHealth()>0){
+                    soldier(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==14&&enemigos[i].getHealth()>0){
+                    arbalist(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==16&&enemigos[i].getHealth()>0){
+                    defender(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==28&&enemigos[i].getHealth()>0){
+                    captain(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==95&&enemigos[i].getHealth()>0){
+                    necromancer(pos_X_Personaje);
+                }
+                break;
+            case 1:
+                pos_X_Personaje=61;
+                if(enemigos[i].getMaxHealth()==10&&enemigos[i].getHealth()>0){
+                    soldier(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==14&&enemigos[i].getHealth()>0){
+                    arbalist(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==16&&enemigos[i].getHealth()>0){
+                    defender(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==28&&enemigos[i].getHealth()>0){
+                    captain(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==95&&enemigos[i].getHealth()>0){
+                    necromancer(pos_X_Personaje);
+                }
+                break;
+            case 2:
+                pos_X_Personaje=72;
+                if(enemigos[i].getMaxHealth()==10&&enemigos[i].getHealth()>0){
+                    soldier(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==14&&enemigos[i].getHealth()>0){
+                    arbalist(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==16&&enemigos[i].getHealth()>0){
+                    defender(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==28&&enemigos[i].getHealth()>0){
+                    captain(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==95&&enemigos[i].getHealth()>0){
+                    necromancer(pos_X_Personaje);
+                }
+                break;
+            case 3:
+                pos_X_Personaje=83;
+                if(enemigos[i].getMaxHealth()==10&&enemigos[i].getHealth()>0){
+                    soldier(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==14&&enemigos[i].getHealth()>0){
+                    arbalist(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==16&&enemigos[i].getHealth()>0){
+                    defender(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==28&&enemigos[i].getHealth()>0){
+                    captain(pos_X_Personaje);
+                }else if(enemigos[i].getMaxHealth()==95&&enemigos[i].getHealth()>0){
+                    necromancer(pos_X_Personaje);
+                }
+                break;
         }
     }
 }
 //REPRESENTACION GRAFICA DE HEROES Y ENEMIGOS
-void plagueDoctor(){
-    gotoxy(3,10);cout<<"   _.~~	"<<endl;
-    gotoxy(3,11);cout<<"  (__)  "<<endl;
-    gotoxy(3,12);cout<<"  <  >  "<<endl;
-    gotoxy(3,13);cout<<"   )(   "<<endl;
-    gotoxy(3,14);cout<<"  /~~"<<char(92)<<"  "<<endl;
-    gotoxy(3,15);cout<<" /~~~~"<<char(92)<<" "<<endl;
-    gotoxy(3,16); cout<<"(______)"<<endl;
+void plagueDoctor(int pos_X_Personaje){
+    //8 x 7
+    //POS 3
+    gotoxy(pos_X_Personaje,8); cout<<"Doctor"<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<"   _.~~	"<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"  (__)  "<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"  <  >  "<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"   )(   "<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"  /~~"<<char(92)<<"  "<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<" /~~~~"<<char(92)<<" "<<endl;
+    gotoxy(pos_X_Personaje,16); cout<<"(______)"<<endl;
 }
-void vestal(){
-    gotoxy(16,10);cout<<"  ___  "<<endl;
-    gotoxy(16,11);cout<<"<|"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
-    gotoxy(16,12);cout<<"<|^"<<char(34)<<"^|>"<<endl;
-    gotoxy(16,13);cout<<"<|"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
-    gotoxy(16,14);cout<<"  "<<char(92)<<" /  "<<endl;
-    gotoxy(16,15);cout<<"  | |  "<<endl;
-    gotoxy(16,16);cout<<"  |_|  "<<endl;
+void vestal(int pos_X_Personaje){
+    //7 x 7
+    //POS 16
+    gotoxy(pos_X_Personaje,8); cout<<"Vestal"<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<"  ___  "<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"<|"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"<|^"<<char(34)<<"^|>"<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"<|"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"  "<<char(92)<<" /  "<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"  | |  "<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<"  |_|  "<<endl;
 }
-void highwayman(){
-    gotoxy(27,11);cout<<"  __,____ "<<endl;
-    gotoxy(27,12);cout<<" /__.==--"<<char(34)<<endl;
-    gotoxy(27,13);cout<<"/#(-'     "<<endl;
-    gotoxy(27,14);cout<<"`-'		 "<<endl;
+void highwayman(int pos_X_Personaje){
+    //10 x 4
+    //POS 27
+    gotoxy(pos_X_Personaje,8); cout<<"Highwayman"<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"  __,____ "<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<" /__.==--"<<char(34)<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"/#(-'     "<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"`-'		 "<<endl;
 }
-void crusader(){
-    gotoxy(40,10);cout<<"  /|"<<char(92)<<"  "<<endl;
-    gotoxy(40,11);cout<<" | | | "<<endl;
-    gotoxy(40,12);cout<<" | | | "<<endl;
-    gotoxy(40,13);cout<<" | | | "<<endl;
-    gotoxy(40,14);cout<<"[/////]"<<endl;
-    gotoxy(40,15);cout<<"  |_|  "<<endl;
-    gotoxy(40,16);cout<<" (~~~) "<<endl;
+void crusader(int pos_X_Personaje){
+    //7 x 7
+    //40
+    gotoxy(pos_X_Personaje,8); cout<<"Crusader"<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<"  /|"<<char(92)<<"  "<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<" | | | "<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<" | | | "<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<" | | | "<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"[/////]"<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"  |_|  "<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<" (~~~) "<<endl;
 }
-void captain(){
+void captain(int pos_X_Personaje){
     //11 x 9
-    gotoxy(51,9);cout<<"    ___    "<<endl;
-    gotoxy(51,10);cout<<" .-"<<char(239)<<"^"<<char(34)<<"^`-. "<<endl;
-    gotoxy(51,11);cout<<"<|"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
-    gotoxy(51,12);cout<<"<|^"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"^|>"<<endl;
-    gotoxy(51,13);cout<<"  `-"<<char(34)<<"^"<<char(34)<<"-"<<char(239)<<"  "<<endl;
-    gotoxy(51,14);cout<<"    "<<char(92)<<" /    "<<endl;
-    gotoxy(51,15);cout<<"    | |    "<<endl;
-    gotoxy(51,16);cout<<"    | |    "<<endl;
-    gotoxy(51,17);cout<<"    |_|    "<<endl;
+    //POS 51
+    gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
+    gotoxy(pos_X_Personaje,8); cout<<" Captain"<<endl;
+    gotoxy(pos_X_Personaje,9);cout<<"    ___    "<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<" .-"<<char(239)<<"^"<<char(34)<<"^`-. "<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"<|"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"<|^"<<char(34)<<"^"<<char(34)<<"^"<<char(34)<<"^|>"<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"  `-"<<char(34)<<"^"<<char(34)<<"-"<<char(239)<<"  "<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"    "<<char(92)<<" /    "<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"    | |    "<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<"    | |    "<<endl;
+    gotoxy(pos_X_Personaje,17);cout<<"    |_|    "<<endl;
 }
-void defender(){
+void defender(int pos_X_Personaje){
     //10 x 8
-    gotoxy(63,10);cout<<" _.-^-._ "<<endl;
-    gotoxy(63,11);cout<<"|   :   |"<<endl;
-    gotoxy(63,12);cout<<"|  .:.  |"<<endl;
-    gotoxy(63,13);cout<<"|.:::::.|"<<endl;
-    gotoxy(63,14);cout<<"| ::::: |"<<endl;
-    gotoxy(63,15);cout<<"|  ':'  |"<<endl;
-    gotoxy(63,16);cout<<char(92)<<"   :   /"<<endl;
-    gotoxy(63,17);cout<<" `-.:.-` "<<endl;
+    //POS 63
+    gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
+    gotoxy(pos_X_Personaje,8); cout<<"Defender"<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<" _.-^-._ "<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"|   :   |"<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"|  .:.  |"<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"|.:::::.|"<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"| ::::: |"<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"|  ':'  |"<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<char(92)<<"   :   /"<<endl;
+    gotoxy(pos_X_Personaje,17);cout<<" `-.:.-` "<<endl;
 }
-void soldier(){
+void soldier(int pos_X_Personaje){
     //10 x 9
-    gotoxy(73,8); cout<<"   .-.   "<<endl;
-    gotoxy(73,9); cout<<"  (o.o)  "<<endl;
-    gotoxy(73,10);cout<<"   |=|   "<<endl;
-    gotoxy(73,11);cout<<"  __|__  "<<endl;
-    gotoxy(73,12);cout<<"// -|- "<<char(92)<<char(92)<<endl;
-    gotoxy(73,13);cout<<char(92)<<char(92)<<" -|- //"<<endl;
-    gotoxy(73,14);cout<<"  (.=.)  "<<endl;
-    gotoxy(73,15);cout<<"  || ||  "<<endl;
-    gotoxy(73,16);cout<<"  || ||  "<<endl;
-    gotoxy(73,17);cout<<" =="<<char(39)<<" "<<char(39)<<"== "<<endl;
+    //POS 73
+    gotoxy(pos_X_Personaje,8); cout<<"Skeleton"<<endl;
+    gotoxy(pos_X_Personaje,7); cout<<"Soldier"<<endl;
+    gotoxy(pos_X_Personaje,8); cout<<"   .-.   "<<endl;
+    gotoxy(pos_X_Personaje,9); cout<<"  (o.o)  "<<endl;
+    gotoxy(pos_X_Personaje,10);cout<<"   |=|   "<<endl;
+    gotoxy(pos_X_Personaje,11);cout<<"  __|__  "<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"// -|- "<<char(92)<<char(92)<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<char(92)<<char(92)<<" -|- //"<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"  (.=.)  "<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"  || ||  "<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<"  || ||  "<<endl;
+    gotoxy(pos_X_Personaje,17);cout<<" =="<<char(39)<<" "<<char(39)<<"== "<<endl;
 }
-void arbalist(){
+void arbalist(int pos_X_Personaje){
     //9 x 5
-    gotoxy(83,12);cout<<"    /"<<char(92)<<"   "<<endl;
-    gotoxy(83,13);cout<<"   |--"<<char(92)<<"  "<<endl;
-    gotoxy(83,14);cout<<"<--+====~"<<endl;
-    gotoxy(83,15);cout<<"   |--/  "<<endl;
-    gotoxy(83,16);cout<<"    "<<char(92)<<"/   "<<endl;
+    //POS 83
+    gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
+    gotoxy(pos_X_Personaje,8); cout<<"Arbalist"<<endl;
+    gotoxy(pos_X_Personaje,12);cout<<"    /"<<char(92)<<"   "<<endl;
+    gotoxy(pos_X_Personaje,13);cout<<"   |--"<<char(92)<<"  "<<endl;
+    gotoxy(pos_X_Personaje,14);cout<<"<--+====~"<<endl;
+    gotoxy(pos_X_Personaje,15);cout<<"   |--/  "<<endl;
+    gotoxy(pos_X_Personaje,16);cout<<"    "<<char(92)<<"/   "<<endl;
 }
-void necromancer(){
+void necromancer(int pos_X_Personaje){
     //11 x 7
-    gotoxy(83,11); cout<<"   _______ ";
-    gotoxy(83,12); cout<<"  /~~~~~/ "<<char(92);
-    gotoxy(83,13); cout<<"  | .-. |_/";
-    gotoxy(83,14);cout<<"  |(o.o)|  ";
-    gotoxy(83,15);cout<<"  | |=| |  ";
-    gotoxy(83,16);cout<<"__|__~~~|  ";
-    gotoxy(83,17);cout<<char(92)<<"____"<<char(92)<<"__/  ";
+    //POS 83
+    gotoxy(pos_X_Personaje,8); cout<<"Necromancer"<<endl;
+    gotoxy(pos_X_Personaje-1,11); cout<<"    _______ ";
+    gotoxy(pos_X_Personaje-1,12); cout<<"   /~~~~~/ "<<char(92);
+    gotoxy(pos_X_Personaje-1,13); cout<<"   | .-. |_/";
+    gotoxy(pos_X_Personaje-1,14); cout<<"   |(o.o)|  ";
+    gotoxy(pos_X_Personaje-1,15); cout<<"   | |=| |  ";
+    gotoxy(pos_X_Personaje-1,16); cout<<" __|__~~~|  ";
+    gotoxy(pos_X_Personaje-1,17); cout<<" "<<char(92)<<"____"<<char(92)<<"__/  ";
 }
 //MARCOS, TITULOS Y DECORACIONES
 void pintarCastillo(){
@@ -2029,6 +2317,7 @@ void pintarSalir(){
 //FUNCION PRINCIPAL DEL PROGRAMA
 int inicio(){
     int puntero = 0;
+    //bool game=true;
     while(true)
     {
         ShowConsoleCursor(false);
@@ -2070,18 +2359,18 @@ int inicio(){
                         system("cls");
                         PlaySound(TEXT("gen_title_startgame.wav"),NULL,SND_ASYNC);
                         pintarMarcoJugar();
-                        pintarescenario();
-                        Sleep(1000);
-                        while (true)
+                        pintarEscenario();
+                        /*while (true)
                         {
+                            //pintarEscenario(game);
                             if (GetAsyncKeyState(VK_RETURN) != 0)
                             {
                                 //break;
                             }
                             if (GetAsyncKeyState(VK_UP) != 0){}
                             if (GetAsyncKeyState(VK_DOWN) != 0){}
-                        }
-                        system("cls");
+                        }*/
+                        //system("cls");
                         break;
                     case 1:
                         system("cls");

@@ -12,7 +12,6 @@ class Ataque
         void limpiarHabilidades();
         /*Habilidades compartidas*/
         void SharedHeroSkill_Move(int,Heroe*);
-        void SharedHeroDeath(int,Heroe*);
         /*Cruzado*/
         void CrusaderSkill_Smite(int,Heroe*,Enemigo*);
         void CrusaderSkill_StunningBlow(int,Heroe*,Enemigo*);

@@ -13,15 +13,9 @@ class Enemigo
         int dodge;
         int protection;
         int position;
-        int chanceBleed;
-        int chancePoison;
-        int chanceStun;
-        int bleed;
-        int poison;
-        int stun;
     public:
         /*Constructores*/
-        Enemigo(char[],int,int,int,int,int,int,int,int,int,int,int,int,int,int);
+        Enemigo(char[],int,int,int,int,int,int,int,int);
         Enemigo();
         /*Habilidades De Combate*/
         /*Metodos Set*/
@@ -34,12 +28,6 @@ class Enemigo
         void setDodge(int);
         void setProtection(int);
         void setPosition(int);
-        void setChanceBleed(int);
-        void setChancePoison(int);
-        void setChanceStun(int);
-        void setBleed(int);
-        void setPoison(int);
-        void setStun(int);
         /*Metodos Get*/
         char * getName();
         int getMaxHealth();
@@ -50,12 +38,6 @@ class Enemigo
         int getDodge();
         int getProtection();
         int getPosition();
-        int getChanceBleed();
-        int getChancePoison();
-        int getChanceStun();
-        int getBleed();
-        int getPoison();
-        int getStun();
 };
 
 #endif // ENEMIGO_H
