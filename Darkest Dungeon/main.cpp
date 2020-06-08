@@ -87,7 +87,7 @@ void crearSoldier(int creacion, Enemigo enemigos[4]){
 void crearArbalist(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Arbalist");
     enemigos[creacion].setMaxHealth(14);
-    enemigos[creacion].setHealth(14);
+    enemigos[creacion].setHealth(14);//14
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(6);
     enemigos[creacion].setCritic(0);
@@ -120,7 +120,7 @@ void crearCaptain(int creacion, Enemigo enemigos[4]){
 void crearNecromancer(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Necromancer");
     enemigos[creacion].setMaxHealth(95);
-    enemigos[creacion].setHealth(95);
+    enemigos[creacion].setHealth(95);//95
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(5);
     enemigos[creacion].setCritic(0);
@@ -1002,6 +1002,8 @@ void pintarEscenario(){
                     if(pos_x==89&&mapa[posicion_actual+1]=='I'){
                         puntos_cofre = rand() % 100+50;
                         puntos_obtenidos += puntos_cofre;
+                        PlaySound(TEXT("sounds/ui_dun_loot_take_heirloom.wav"),NULL,SND_ASYNC);
+                        PlaySound(TEXT("sounds/ui_dun_loot_take_gold.wav"),NULL,SND_ASYNC);
                         /*for(int i=0;i<4;i++){
                             if(heroes[i].getHealth()>0){
                                 heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
@@ -1043,6 +1045,8 @@ void pintarEscenario(){
                     if(pos_x==89&&mapa[posicion_actual+1]=='I'){
                         puntos_cofre = rand() % 100+50;
                         puntos_obtenidos += puntos_cofre;
+                        PlaySound(TEXT("sounds/ui_dun_loot_take_heirloom.wav"),NULL,SND_ASYNC);
+                        PlaySound(TEXT("sounds/ui_dun_loot_take_gold.wav"),NULL,SND_ASYNC);
                         /*for(int i=0;i<4;i++){
                             if(heroes[i].getHealth()>0){
                                 heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
@@ -1303,6 +1307,7 @@ void pintarEscenario(){
                 }
                 if(enemigosvivos>0&&heroesvivos<=0){
                     gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    PlaySound(TEXT("sounds/gen_title_stygianbutton.wav"),NULL,SND_ASYNC);
                     Sleep(2500);
                     gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
                     gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
@@ -1501,6 +1506,7 @@ void pintarEscenario(){
                 }
                 if(enemigosvivos>0&&heroesvivos<=0){
                     gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    PlaySound(TEXT("sounds/gen_title_stygianbutton.wav"),NULL,SND_ASYNC);
                     Sleep(2500);
                     gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
                     gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
@@ -1652,11 +1658,19 @@ void pintarEscenario(){
                 if(heroesvivos>0&&enemigosvivos<=0){
                     puntos_enemigos = rand() % 100+50;
                     puntos_obtenidos += puntos_enemigos;
-                    gotoxy(57,25);cout << "HAS GANADO EL COMBATE";
+                    gotoxy(57,25);cout<<"HAS GANADO EL COMBATE";
                     Sleep(2000);
+                    borrarHabilidades();
+                    gotoxy(35,10);cout<<"0====================0";
+                    gotoxy(35,11);cout<<"|  HAS TERMINADO EL  |";
+                    gotoxy(35,12);cout<<"|        JUEGO.      |";
+                    gotoxy(35,13);cout<<"0====================0";
+                    gotoxy(60,25);cout<<"FELICIDADES";
+                    Sleep(4000);
                 }
                 if(enemigosvivos>0&&heroesvivos<=0){
                     gotoxy(57,25);cout << "HAS PERDIDO EL COMBATE";
+                    PlaySound(TEXT("sounds/gen_title_stygianbutton.wav"),NULL,SND_ASYNC);
                     Sleep(2500);
                     gotoxy(57,25);cout << "EL JUEGO SE REINICIARA";
                     gotoxy(57,26);cout << " DESDE EL PRIMER NIVEL";
@@ -1993,7 +2007,7 @@ void defender(int pos_X_Personaje){
 void soldier(int pos_X_Personaje){
     //10 x 9
     //POS 73
-    gotoxy(pos_X_Personaje,8); cout<<"Skeleton"<<endl;
+    gotoxy(pos_X_Personaje,6); cout<<"Skeleton"<<endl;
     gotoxy(pos_X_Personaje,7); cout<<"Soldier"<<endl;
     gotoxy(pos_X_Personaje,8); cout<<"   .-.   "<<endl;
     gotoxy(pos_X_Personaje,9); cout<<"  (o.o)  "<<endl;
@@ -2333,7 +2347,7 @@ int inicio(){
             if (GetAsyncKeyState(VK_UP) != 0)
             {
                 puntero -= 1;
-                PlaySound(TEXT("ui_town_button_embark.wav"),NULL,SND_ASYNC);
+                PlaySound(TEXT("sounds/ui_town_button_embark.wav"),NULL,SND_ASYNC);
                 if (puntero == -1)
                 {
                     puntero = 3;
@@ -2343,7 +2357,7 @@ int inicio(){
             if (GetAsyncKeyState(VK_DOWN) != 0)
             {
                 puntero += 1;
-                PlaySound(TEXT("ui_town_button_embark.wav"),NULL,SND_ASYNC);
+                PlaySound(TEXT("sounds/ui_town_button_embark.wav"),NULL,SND_ASYNC);
                 if (puntero == 4)
                 {
                     puntero = 0;
@@ -2352,12 +2366,12 @@ int inicio(){
             }
             if (GetAsyncKeyState(VK_RETURN) != 0)
             {
-                PlaySound(TEXT("ui_shr_button_click.wav"),NULL,SND_ASYNC);
+                PlaySound(TEXT("sounds/ui_shr_button_click.wav"),NULL,SND_ASYNC);
                 switch (puntero)
                 {
                     case 0:
                         system("cls");
-                        PlaySound(TEXT("gen_title_startgame.wav"),NULL,SND_ASYNC);
+                        PlaySound(TEXT("sounds/gen_title_startgame.wav"),NULL,SND_ASYNC);
                         pintarMarcoJugar();
                         pintarEscenario();
                         /*while (true)
@@ -2397,7 +2411,7 @@ int inicio(){
                         while (true){
                             if (GetAsyncKeyState(VK_RETURN) != 0)
                             {
-                                PlaySound(TEXT("ui_shr_unpause.wav"),NULL,SND_ASYNC);
+                                PlaySound(TEXT("sounds/ui_shr_unpause.wav"),NULL,SND_ASYNC);
                                 break;
                             }
                             if (GetAsyncKeyState(VK_UP) != 0){}
@@ -2430,7 +2444,7 @@ int inicio(){
                         while (true){
                             if (GetAsyncKeyState(VK_RETURN) != 0)
                             {
-                                PlaySound(TEXT("ui_shr_unpause.wav"),NULL,SND_ASYNC);
+                                PlaySound(TEXT("sounds/ui_shr_unpause.wav"),NULL,SND_ASYNC);
                                 break;
                             }
                             if (GetAsyncKeyState(VK_UP) != 0){}
@@ -2440,7 +2454,7 @@ int inicio(){
                         break;
                     case 3:
                         system("cls");
-                        PlaySound(TEXT("ui_shr_window_popup.wav"),NULL,SND_ASYNC);
+                        PlaySound(TEXT("sounds/ui_shr_window_popup.wav"),NULL,SND_ASYNC);
                         pintarMarco();
                         pintarSalir();
                         pintarMenu(puntero);

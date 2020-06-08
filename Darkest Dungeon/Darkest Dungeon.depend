@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1591065257 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
+1591571700 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
 	<iostream>
 	<windows.h>
 	<stdio.h>
@@ -7,5 +7,42 @@
 	<mmsystem.h>
 	<cstdlib>
 	<stdlib.h>
+	"Enemigo.h"
+	"Heroe.h"
+	"Ataque.h"
 	<time.h>
+
+1591337052 c:\users\elg\desktop\sexta unidad\darkest dungeon\include\enemigo.h
+
+1591337052 c:\users\elg\desktop\sexta unidad\darkest dungeon\include\heroe.h
+
+1591337052 c:\users\elg\desktop\sexta unidad\darkest dungeon\include\ataque.h
+	"Heroe.h"
+	"Enemigo.h"
+
+1591578911 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\src\ataque.cpp
+	"Ataque.h"
+	"Heroe.h"
+	"Enemigo.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<mmsystem.h>
+
+1591336989 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\src\enemigo.cpp
+	"Enemigo.h"
+	<iostream>
+	<cstring>
+	<string>
+	<string.h>
+	<strings.h>
+
+1591336989 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\src\heroe.cpp
+	"Heroe.h"
+	<iostream>
+	<cstring>
+	<string>
+	<string.h>
+	<strings.h>
 
