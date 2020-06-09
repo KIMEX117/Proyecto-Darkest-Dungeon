@@ -31,7 +31,7 @@ void gotoxy(int x, int y){
 void crearCrusader(Heroe heroes[4]){
     heroes[0].setName("Crusader");
     heroes[0].setMaxHealth(33);
-    heroes[0].setHealth(33);//33
+    heroes[0].setHealth(33);
     heroes[0].setAccuracy(0);
     heroes[0].setDamage(9);
     heroes[0].setCritic(0);
@@ -42,7 +42,7 @@ void crearCrusader(Heroe heroes[4]){
 void crearHighwayman(Heroe heroes[4]){
     heroes[1].setName("Highwayman");
     heroes[1].setMaxHealth(26);
-    heroes[1].setHealth(26);//26
+    heroes[1].setHealth(26);
     heroes[1].setAccuracy(0);
     heroes[1].setDamage(8);
     heroes[1].setCritic(0);
@@ -53,7 +53,7 @@ void crearHighwayman(Heroe heroes[4]){
 void crearVestal(Heroe heroes[4]){
     heroes[2].setName("Vestal");
     heroes[2].setMaxHealth(24);
-    heroes[2].setHealth(24);//24
+    heroes[2].setHealth(24);
     heroes[2].setAccuracy(0);
     heroes[2].setDamage(6);
     heroes[2].setCritic(0);
@@ -64,7 +64,7 @@ void crearVestal(Heroe heroes[4]){
 void crearDoctor(Heroe heroes[4]){
     heroes[3].setName("Plague Doctor");
     heroes[3].setMaxHealth(23);
-    heroes[3].setHealth(23);//23
+    heroes[3].setHealth(23);
     heroes[3].setAccuracy(0);
     heroes[3].setDamage(7);
     heroes[3].setCritic(0);
@@ -76,7 +76,7 @@ void crearDoctor(Heroe heroes[4]){
 void crearSoldier(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Soldier");
     enemigos[creacion].setMaxHealth(10);
-    enemigos[creacion].setHealth(10);//10
+    enemigos[creacion].setHealth(10);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(5);
     enemigos[creacion].setCritic(0);
@@ -87,7 +87,7 @@ void crearSoldier(int creacion, Enemigo enemigos[4]){
 void crearArbalist(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Arbalist");
     enemigos[creacion].setMaxHealth(14);
-    enemigos[creacion].setHealth(14);//14
+    enemigos[creacion].setHealth(14);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(6);
     enemigos[creacion].setCritic(0);
@@ -98,7 +98,7 @@ void crearArbalist(int creacion, Enemigo enemigos[4]){
 void crearDefender(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Defender");
     enemigos[creacion].setMaxHealth(16);
-    enemigos[creacion].setHealth(16);//16
+    enemigos[creacion].setHealth(16);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(4);
     enemigos[creacion].setCritic(0);
@@ -109,7 +109,7 @@ void crearDefender(int creacion, Enemigo enemigos[4]){
 void crearCaptain(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Skeleton Captain");
     enemigos[creacion].setMaxHealth(28);
-    enemigos[creacion].setHealth(28);//28
+    enemigos[creacion].setHealth(28);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(6);
     enemigos[creacion].setCritic(0);
@@ -120,7 +120,7 @@ void crearCaptain(int creacion, Enemigo enemigos[4]){
 void crearNecromancer(int creacion, Enemigo enemigos[4]){
     enemigos[creacion].setName("Necromancer");
     enemigos[creacion].setMaxHealth(95);
-    enemigos[creacion].setHealth(95);//95
+    enemigos[creacion].setHealth(95);
     enemigos[creacion].setAccuracy(0);
     enemigos[creacion].setDamage(5);
     enemigos[creacion].setCritic(0);
@@ -163,60 +163,6 @@ void crusaderSkills(int turno, Heroe heroes[4], Enemigo enemigos[4]){
         gotoxy(41,28);cout<<"6.- Saltar turno";
         gotoxy(70,24);cout<<"Opcion: ";
         cin>>habilidad;
-        //HABILIDAD 1
-        /*
-        if (GetAsyncKeyState(0x31)){
-            habilidad=1;
-            if(heroes[turno].getPosition()<2){
-                for(int i=0;i<2;i++){
-                    if(enemigos[i].getHealth()>0){
-                        accion = true;
-                    }
-                }
-            }
-        }
-        //HABILIDAD 2
-        if (GetAsyncKeyState(0x32)){
-            habilidad=2;
-            if(heroes[turno].getPosition()<2){
-                for(int i=0;i<2;i++){
-                    if(enemigos[i].getHealth()>0){
-                        accion = true;
-                    }
-                }
-            }
-        }
-        //HABILIDAD 3
-        if (GetAsyncKeyState(0x33)){
-            habilidad=3;
-            if(heroes[turno].getPosition()<2){
-                for(int i=0;i<2;i++){
-                    if(enemigos[i].getHealth()>0){
-                        accion = true;
-                    }
-                }
-            }
-        }
-        //HABILIDAD 4
-        if (GetAsyncKeyState(0x34)){
-            habilidad=4;
-            for(int i=0;i<4;i++){
-                if(heroes[i].getHealth()>0&&heroes[i].getHealth()<heroes[i].getMaxHealth()){
-                    accion = true;
-                }
-            }
-        }
-        //HABILIDAD 5
-        if (GetAsyncKeyState(0x35)){
-            habilidad=5;
-            accion = true;
-        }
-        //HABILIDAD 6
-        if (GetAsyncKeyState(0x36)){
-            habilidad=6;
-            accion = true;
-        }
-        */
         switch(habilidad){
             case 1:
                 if(heroes[turno].getPosition()<2){
@@ -804,26 +750,6 @@ int main()
 {
     inicio();
 }
-//METODO ELECCION DE PASILLO (CANCELADO)
-void opcionJuego(int opcion){
-    string camino[2]={"Left","Right"};
-    gotoxy(35,10);cout<<"0====================0";
-    gotoxy(35,11);cout<<"|  Elige un camino:  |";
-    gotoxy(35,12);cout<<"|        <->         |";
-    gotoxy(35,13);cout<<"0====================0";
-
-    for(int i=0;i<2;i++){
-        if(i==opcion){
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-            gotoxy(38,12);
-            cout<< camino[i] << endl;
-        }else{
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-            gotoxy(49,12);
-            cout << camino[i] << endl;
-        }
-    }
-}
 //FUNCION PRINCIPAL PARA EL DESARROLLO DEL GAMEPLAY
 void pintarEscenario(){
     //JUEGO CONTINUO
@@ -833,15 +759,12 @@ void pintarEscenario(){
     int movimiento=1;
     bool desplazamiento=true;
     //POSICION EN EL MAPA Y EVENTOS
-    //int randomCaracter = 0;
-    //srand (time(NULL));
     int posicion_actual = 0;
     //PUNTOS DE LOS NIVELES
     int puntos_cofre = 0;
     int puntos_enemigos = 0;
     int puntos_obtenidos = 0;
     //VARIABLES NIVEL
-    //int opcion=0;
     bool pasillo=false;
     bool nivel_1=true;
     bool nivel_2=false;
@@ -1004,15 +927,6 @@ void pintarEscenario(){
                         puntos_obtenidos += puntos_cofre;
                         PlaySound(TEXT("sounds/ui_dun_loot_take_heirloom.wav"),NULL,SND_ASYNC);
                         PlaySound(TEXT("sounds/ui_dun_loot_take_gold.wav"),NULL,SND_ASYNC);
-                        /*for(int i=0;i<4;i++){
-                            if(heroes[i].getHealth()>0){
-                                heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
-                                heroes[i].setHealth(heroes[i].getHealth()+3);
-                                heroes[i].setDamage(heroes[i].getDamage()+2);
-                                heroes[i].setDodge(heroes[i].getDodge()+5);
-                                heroes[i].setProtection(heroes[i].getProtection()+8);
-                            }
-                        }*/
                     }
                     if(pos_x==94){
                         pasillo=false;
@@ -1047,15 +961,6 @@ void pintarEscenario(){
                         puntos_obtenidos += puntos_cofre;
                         PlaySound(TEXT("sounds/ui_dun_loot_take_heirloom.wav"),NULL,SND_ASYNC);
                         PlaySound(TEXT("sounds/ui_dun_loot_take_gold.wav"),NULL,SND_ASYNC);
-                        /*for(int i=0;i<4;i++){
-                            if(heroes[i].getHealth()>0){
-                                heroes[i].setMaxHealth(heroes[i].getMaxHealth()+3);
-                                heroes[i].setHealth(heroes[i].getHealth()+3);
-                                heroes[i].setDamage(heroes[i].getDamage()+2);
-                                heroes[i].setDodge(heroes[i].getDodge()+5);
-                                heroes[i].setProtection(heroes[i].getProtection()+8);
-                            }
-                        }*/
                     }
                     if(pos_x==94){
                         pasillo=false;
@@ -1760,36 +1665,6 @@ void vidaPersonajes(Heroe heroes[4],Enemigo enemigos[4]){
         }
     }
 }
-//ESCENARIO DE BATALLA (CANCELADO)
-void pintarBatalla(){
-    char matrizPelea[20][91]={'(','o','.','_','_','_','.','o',')',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','(','o','.','_','_','_','.','o',')',
-                              '_','|',' ',' ',' ',' ',' ','|','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|','_','_',',','~','~','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ','|','_','_',',','~','~','|',' ',
-                              '_','|',' ',' ',' ',' ',' ','|','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|',' ',' ',' ',' ',' ','|','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ','|',' ',
-                              '_','|',' ',' ',' ',' ',' ','|','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|','_','_',',','~','~','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ','|','_','_',',','~','~','|',' ',
-                              '_','|',' ',' ',' ',' ',' ','|','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|',' ',' ',' ',' ',' ','|','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ','|',' ',
-                              '_','|',' ',' ',' ',' ',' ','|','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|','_','_',',','~','~','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ','|','_','_',',','~','~','|',' ',
-                              '_','|',' ',' ',' ',' ',' ','|','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','|',' ',' ',' ',' ',' ','|','_',
-                              ' ','|',' ',' ',' ',' ',' ','|','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ',' ',' ',' ','|',' ',
-                              '(','o','.','_','_','_','.','o',')','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','|','_','_','_','_','_','_','_','_','_','_','_','_','_','(','o','.','_','_','_','.','o',')',
-                              '_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_',
-                              '_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_',
-                              '_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_',
-                              '_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_',
-                              '_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_',
-                              '_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_','_','_','_','_','/','_','_'};
-    for(int i=0;i<20;i++){
-        for(int j=0;j<91;j++){
-            gotoxy(j+1,i+1);
-            cout<<matrizPelea[i][j];
-        }
-        cout<<endl;
-    }
-}
 //ESCENARIO DE MATRIZ PRINCIPAL COMO REPINTADO PARA COMBATES
 bool pintarCombate(char matrizJuego[20][185], bool copia){
     char matrizCombate[20][91];
@@ -1932,7 +1807,6 @@ void repintarPersonajes(Heroe heroes[4],Enemigo enemigos[4]){
 //REPRESENTACION GRAFICA DE HEROES Y ENEMIGOS
 void plagueDoctor(int pos_X_Personaje){
     //8 x 7
-    //POS 3
     gotoxy(pos_X_Personaje,8); cout<<"Doctor"<<endl;
     gotoxy(pos_X_Personaje,10);cout<<"   _.~~	"<<endl;
     gotoxy(pos_X_Personaje,11);cout<<"  (__)  "<<endl;
@@ -1944,7 +1818,6 @@ void plagueDoctor(int pos_X_Personaje){
 }
 void vestal(int pos_X_Personaje){
     //7 x 7
-    //POS 16
     gotoxy(pos_X_Personaje,8); cout<<"Vestal"<<endl;
     gotoxy(pos_X_Personaje,10);cout<<"  ___  "<<endl;
     gotoxy(pos_X_Personaje,11);cout<<"<|"<<char(34)<<"^"<<char(34)<<"|>"<<endl;
@@ -1956,7 +1829,6 @@ void vestal(int pos_X_Personaje){
 }
 void highwayman(int pos_X_Personaje){
     //10 x 4
-    //POS 27
     gotoxy(pos_X_Personaje,8); cout<<"Highwayman"<<endl;
     gotoxy(pos_X_Personaje,11);cout<<"  __,____ "<<endl;
     gotoxy(pos_X_Personaje,12);cout<<" /__.==--"<<char(34)<<endl;
@@ -1965,7 +1837,6 @@ void highwayman(int pos_X_Personaje){
 }
 void crusader(int pos_X_Personaje){
     //7 x 7
-    //40
     gotoxy(pos_X_Personaje,8); cout<<"Crusader"<<endl;
     gotoxy(pos_X_Personaje,10);cout<<"  /|"<<char(92)<<"  "<<endl;
     gotoxy(pos_X_Personaje,11);cout<<" | | | "<<endl;
@@ -1977,7 +1848,6 @@ void crusader(int pos_X_Personaje){
 }
 void captain(int pos_X_Personaje){
     //11 x 9
-    //POS 51
     gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
     gotoxy(pos_X_Personaje,8); cout<<" Captain"<<endl;
     gotoxy(pos_X_Personaje,9);cout<<"    ___    "<<endl;
@@ -1992,7 +1862,6 @@ void captain(int pos_X_Personaje){
 }
 void defender(int pos_X_Personaje){
     //10 x 8
-    //POS 63
     gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
     gotoxy(pos_X_Personaje,8); cout<<"Defender"<<endl;
     gotoxy(pos_X_Personaje,10);cout<<" _.-^-._ "<<endl;
@@ -2006,7 +1875,6 @@ void defender(int pos_X_Personaje){
 }
 void soldier(int pos_X_Personaje){
     //10 x 9
-    //POS 73
     gotoxy(pos_X_Personaje,6); cout<<"Skeleton"<<endl;
     gotoxy(pos_X_Personaje,7); cout<<"Soldier"<<endl;
     gotoxy(pos_X_Personaje,8); cout<<"   .-.   "<<endl;
@@ -2022,7 +1890,6 @@ void soldier(int pos_X_Personaje){
 }
 void arbalist(int pos_X_Personaje){
     //9 x 5
-    //POS 83
     gotoxy(pos_X_Personaje,7); cout<<"Skeleton"<<endl;
     gotoxy(pos_X_Personaje,8); cout<<"Arbalist"<<endl;
     gotoxy(pos_X_Personaje,12);cout<<"    /"<<char(92)<<"   "<<endl;
@@ -2033,7 +1900,6 @@ void arbalist(int pos_X_Personaje){
 }
 void necromancer(int pos_X_Personaje){
     //11 x 7
-    //POS 83
     gotoxy(pos_X_Personaje,8); cout<<"Necromancer"<<endl;
     gotoxy(pos_X_Personaje-1,11); cout<<"    _______ ";
     gotoxy(pos_X_Personaje-1,12); cout<<"   /~~~~~/ "<<char(92);
@@ -2120,7 +1986,7 @@ void pintarMarcoJugar(){
     cout<<"\274";
     gotoxy(111,21);
 
-    //la parte de arriba
+    //La parte de arriba
     for(int i = 116; i >= 0; i--)
     {
         gotoxy(i,0);
@@ -2189,7 +2055,7 @@ void pintarMarco(){
     }
     gotoxy(111,21);
     cout<<"\274";
-    //la parte de arriba
+    //La parte de arriba
     for(int i = 110; i >= 0; i--)
     {
         gotoxy(i,0);
@@ -2374,17 +2240,6 @@ int inicio(){
                         PlaySound(TEXT("sounds/gen_title_startgame.wav"),NULL,SND_ASYNC);
                         pintarMarcoJugar();
                         pintarEscenario();
-                        /*while (true)
-                        {
-                            //pintarEscenario(game);
-                            if (GetAsyncKeyState(VK_RETURN) != 0)
-                            {
-                                //break;
-                            }
-                            if (GetAsyncKeyState(VK_UP) != 0){}
-                            if (GetAsyncKeyState(VK_DOWN) != 0){}
-                        }*/
-                        //system("cls");
                         break;
                     case 1:
                         system("cls");

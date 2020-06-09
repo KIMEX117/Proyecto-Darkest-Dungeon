@@ -156,7 +156,6 @@ void Ataque::SharedHeroSkill_Move(int turno, Heroe heroes[4]){
         heroes[turno].setPosition(pos);
         realizado = 1;
     }
-    //cout << "Posicion actual del heroe: " << heroes[1].getPosition() << endl;
 }
 //FUNCION GOTOXY PARA PODER USARLA DENTRO DE LA CLASE
 void Ataque::gotoxyAtaque(int x, int y){
@@ -350,11 +349,11 @@ void Ataque::CrusaderSkill_ZealousAccusation(int turno, Heroe heroes[4], Enemigo
                         if(hitcritical<heroes[turno].getCritic()){
                             enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_al_cru_zealousacc.wav"),NULL,SND_ASYNC);
                         }else{
                             enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << damageReceive << endl;
                             PlaySound(TEXT("sounds/char_al_cru_zealousacc.wav"),NULL,SND_ASYNC);
                         }
                         if(enemigos[i].getHealth()<=0){
@@ -601,7 +600,7 @@ void Ataque::HighwaymanSkill_PistolShot(int turno, Heroe heroes[4], Enemigo enem
                     PlaySound(TEXT("sounds/char_al_hwy_pistolshot.wav"),NULL,SND_ASYNC);
                 }
                 if(enemigos[target].getHealth()<=0){
-                    gotoxyAtaque(41,26);cout << "El objetivo ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El objetivo ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del enemigo impactado " << target << ": " << enemigos[target].getHealth() << endl;
                 }
@@ -649,11 +648,11 @@ void Ataque::HighwaymanSkill_Grapeshot(int turno, Heroe heroes[4], Enemigo enemi
                         if(hitcritical<heroes[turno].getCritic()){
                             enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_al_hwy_grapeshot.wav"),NULL,SND_ASYNC);
                         }else{
                             enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << damageReceive << endl;
                             PlaySound(TEXT("sounds/char_al_hwy_grapeshot.wav"),NULL,SND_ASYNC);
                         }
                         if(enemigos[i].getHealth()<=0){
@@ -998,11 +997,11 @@ void Ataque::PlagueDoctorSkill_PlagueGrenade(int turno, Heroe heroes[4], Enemigo
                         if(hitcritical<heroes[turno].getCritic()){
                             enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_al_plg_plaguegrenade.wav"),NULL,SND_ASYNC);
                         }else{
                             enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << damageReceive << endl;
                             PlaySound(TEXT("sounds/char_al_plg_plaguegrenade.wav"),NULL,SND_ASYNC);
                         }
                         if(enemigos[i].getHealth()<=0){
@@ -1056,11 +1055,11 @@ void Ataque::PlagueDoctorSkill_BlindingGas(int turno, Heroe heroes[4], Enemigo e
                         if(hitcritical<heroes[turno].getCritic()){
                             enemigos[i].setHealth(enemigos[i].getHealth()-(damageReceive*1.5));
                             gotoxyAtaque(41,23);cout << "El enemigo ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_al_plg_blindinggas.wav"),NULL,SND_ASYNC);
                         }else{
                             enemigos[i].setHealth(enemigos[i].getHealth()-damageReceive);
-                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << damageReceive << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque:  " << damageReceive << endl;
                             PlaySound(TEXT("sounds/char_al_plg_blindinggas.wav"),NULL,SND_ASYNC);
                         }
                         if(enemigos[i].getHealth()<=0){
@@ -1114,7 +1113,7 @@ void Ataque::PlagueDoctorSkill_BattlefieldMedicine(int turno, Heroe heroes[4], E
             if(hitcritical<heroes[turno].getCritic()){
                 heroes[target].setHealth(heroes[target].getHealth()+(curacion*1.5));
                 gotoxyAtaque(41,23);cout << "El heroe ha sido sanado perfectamente!" << endl;
-                gotoxyAtaque(41,25);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
+                gotoxyAtaque(41,24);cout << "Sanacion de la habilidad: " << (curacion*1.5) << endl;
                 PlaySound(TEXT("sounds/char_al_plg_battlemed.wav"),NULL,SND_ASYNC);
             }else{
                 heroes[target].setHealth(heroes[target].getHealth()+curacion);
@@ -1165,8 +1164,8 @@ void Ataque::SoldierSkill_GraveyardSlash(int turno, Heroe heroes[4], Enemigo ene
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklmi_swordstrike.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1174,7 +1173,7 @@ void Ataque::SoldierSkill_GraveyardSlash(int turno, Heroe heroes[4], Enemigo ene
                     PlaySound(TEXT("sounds/char_en_sklmi_swordstrike.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1217,8 +1216,8 @@ void Ataque::SoldierSkill_GraveyardStumble(int turno, Heroe heroes[4], Enemigo e
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklmi_swordstrike.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1226,7 +1225,7 @@ void Ataque::SoldierSkill_GraveyardStumble(int turno, Heroe heroes[4], Enemigo e
                     PlaySound(TEXT("sounds/char_en_sklmi_swordstrike.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth()<< endl;
                 }
@@ -1272,8 +1271,8 @@ void Ataque::ArbalistSkill_Quarrel(int turno, Heroe heroes[4], Enemigo enemigos[
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklar_crossbowshot.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1281,7 +1280,7 @@ void Ataque::ArbalistSkill_Quarrel(int turno, Heroe heroes[4], Enemigo enemigos[
                     PlaySound(TEXT("sounds/char_en_sklar_crossbowshot.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1326,8 +1325,8 @@ void Ataque::ArbalistSkill_BayonetJab(int turno, Heroe heroes[4], Enemigo enemig
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklar_bayonet_jab.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1335,7 +1334,7 @@ void Ataque::ArbalistSkill_BayonetJab(int turno, Heroe heroes[4], Enemigo enemig
                     PlaySound(TEXT("sounds/char_en_sklar_bayonet_jab.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1380,8 +1379,8 @@ void Ataque::DefenderSkill_AxeBlade(int turno, Heroe heroes[4], Enemigo enemigos
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklde_axestrike.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1389,7 +1388,7 @@ void Ataque::DefenderSkill_AxeBlade(int turno, Heroe heroes[4], Enemigo enemigos
                     PlaySound(TEXT("sounds/char_en_sklde_axestrike.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1433,8 +1432,8 @@ void Ataque::DefenderSkill_DeadWeight(int turno, Heroe heroes[4], Enemigo enemig
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklde_shieldbash.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1442,7 +1441,7 @@ void Ataque::DefenderSkill_DeadWeight(int turno, Heroe heroes[4], Enemigo enemig
                     PlaySound(TEXT("sounds/char_en_sklde_shieldbash.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1486,8 +1485,8 @@ void Ataque::DefenderSkill_ClumsyAxeBlade(int turno, Heroe heroes[4], Enemigo en
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklde_axestrike.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1495,7 +1494,7 @@ void Ataque::DefenderSkill_ClumsyAxeBlade(int turno, Heroe heroes[4], Enemigo en
                     PlaySound(TEXT("sounds/char_en_sklde_axestrike.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1540,8 +1539,8 @@ void Ataque::CaptainSkill_CrushingBlow(int turno, Heroe heroes[4], Enemigo enemi
                 damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                 if(hitcritical<enemigos[turno].getCritic()){
                     heroes[target].setHealth(heroes[target].getHealth()-(damageReceive*1.5));
-                    gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                    gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                    gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                    gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                     PlaySound(TEXT("sounds/char_en_sklcap_crushingblow.wav"),NULL,SND_ASYNC);
                 }else{
                     heroes[target].setHealth(heroes[target].getHealth()-damageReceive);
@@ -1549,7 +1548,7 @@ void Ataque::CaptainSkill_CrushingBlow(int turno, Heroe heroes[4], Enemigo enemi
                     PlaySound(TEXT("sounds/char_en_sklcap_crushingblow.wav"),NULL,SND_ASYNC);
                 }
                 if(heroes[target].getHealth()<=0){
-                    gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                    gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                 }else{
                     gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << target << ": " << heroes[target].getHealth() << " / " << heroes[target].getMaxHealth() << endl;
                 }
@@ -1593,8 +1592,8 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
                         damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
                             heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
-                            gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_en_sklcap_groundpound.wav"),NULL,SND_ASYNC);
                         }else{
                             heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
@@ -1602,7 +1601,7 @@ void Ataque::CaptainSkill_GroundPound(int turno, Heroe heroes[4], Enemigo enemig
                             PlaySound(TEXT("sounds/char_en_sklcap_groundpound.wav"),NULL,SND_ASYNC);
                         }
                         if(heroes[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
                         }
@@ -1651,8 +1650,8 @@ void Ataque::NecromancerSkill_WillingFlesh(int turno, Heroe heroes[4], Enemigo e
                         damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
                             heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
-                            gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_en_nec_flesh.wav"),NULL,SND_ASYNC);
 
                         }else{
@@ -1661,7 +1660,7 @@ void Ataque::NecromancerSkill_WillingFlesh(int turno, Heroe heroes[4], Enemigo e
                             PlaySound(TEXT("sounds/char_en_nec_flesh.wav"),NULL,SND_ASYNC);
                         }
                         if(heroes[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
                         }
@@ -1708,8 +1707,8 @@ void Ataque::NecromancerSkill_CrawlingDead(int turno, Heroe heroes[4], Enemigo e
                         damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
                             heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
-                            gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_en_nec_clawingdead_hit.wav"),NULL,SND_ASYNC);
                         }else{
                             heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
@@ -1717,7 +1716,7 @@ void Ataque::NecromancerSkill_CrawlingDead(int turno, Heroe heroes[4], Enemigo e
                             PlaySound(TEXT("sounds/char_en_nec_clawingdead.wav"),NULL,SND_ASYNC);
                         }
                         if(heroes[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "El heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
                         }
@@ -1764,8 +1763,8 @@ void Ataque::NecromancerSkill_SixFeetUnder(int turno, Heroe heroes[4], Enemigo e
                         damageReceive = (enemigos[turno].getDamage()*skillDamage)*protect;
                         if(hitcritical<enemigos[turno].getCritic()){
                             heroes[i].setHealth(heroes[i].getHealth()-(damageReceive*1.5));
-                            gotoxyAtaque(41,24);cout << "El heroe ha recibido un golpe critico!" << endl;
-                            gotoxyAtaque(41,25);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
+                            gotoxyAtaque(41,23);cout << "El heroe ha recibido un golpe critico!" << endl;
+                            gotoxyAtaque(41,24);cout << "DMG del ataque: " << (damageReceive*1.5) << endl;
                             PlaySound(TEXT("sounds/char_en_nec_sixfeetunder_hit.wav"),NULL,SND_ASYNC);
                         }else{
                             heroes[i].setHealth(heroes[i].getHealth()-damageReceive);
@@ -1773,7 +1772,7 @@ void Ataque::NecromancerSkill_SixFeetUnder(int turno, Heroe heroes[4], Enemigo e
                             PlaySound(TEXT("sounds/char_en_nec_sixfeetunder.wav"),NULL,SND_ASYNC);
                         }
                         if(heroes[i].getHealth()<=0){
-                            gotoxyAtaque(41,24);cout << "El heroe ha sido derribado" << endl;
+                            gotoxyAtaque(41,25);cout << "Un heroe ha sido derribado" << endl;
                         }else{
                             gotoxyAtaque(41,26);cout << "Vida del heroe impactado " << i << ": " << heroes[i].getHealth() << endl;
                         }

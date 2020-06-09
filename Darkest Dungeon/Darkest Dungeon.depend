@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1591571700 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
+1591677138 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\main.cpp
 	<iostream>
 	<windows.h>
 	<stdio.h>
@@ -20,7 +20,7 @@
 	"Heroe.h"
 	"Enemigo.h"
 
-1591578911 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\src\ataque.cpp
+1591681310 source:c:\users\elg\desktop\sexta unidad\darkest dungeon\src\ataque.cpp
 	"Ataque.h"
 	"Heroe.h"
 	"Enemigo.h"
